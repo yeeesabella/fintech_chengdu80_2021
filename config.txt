@@ -1,0 +1,2 @@
+[database]
+con = postgresql+psycopg2://postgres:chengdu_test@localhost/chengdu_test
