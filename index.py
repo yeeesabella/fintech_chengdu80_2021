@@ -10,7 +10,7 @@ import dash
 
 from app import app, server
 from flask_login import logout_user, current_user
-from views import login, error, search, page2, profile, user_admin, aboutus, pricing, watchlist, data_provider, contribute_data, signup, data_provider, premium_content
+from views import login, error, search, blockchain, profile, user_admin, aboutus, pricing, alerts, data_provider, contribute_data, signup, data_provider, premium_content
 
 ###############################################################################
 ########### LANDING PAGE LAYOUT ###########
@@ -121,8 +121,8 @@ def displayPage(pathname):
     if pathname == '/pricing':
         return pricing.layout
 
-    if pathname == '/watchlist':
-        return watchlist.layout
+    if pathname == '/alerts':
+        return alerts.layout
 
     if pathname == '/signup':
         return signup.layout
@@ -132,8 +132,12 @@ def displayPage(pathname):
 
     if pathname == '/contribute_data':
         return contribute_data.layout
+
     if pathname == '/premium_content':
         return premium_content.layout
+
+    if pathname == '/blockchain':
+        return blockchain.layout
 
     else:
         return error.layout
@@ -155,7 +159,7 @@ def sideBar(input1):
                     ),
                     dbc.Nav(
                         [
-                            dbc.NavLink("Watch List", href="/watchlist", active="exact"),
+                            dbc.NavLink("My Alerts", href="/alerts", active="exact"),
                             dbc.NavLink("Entity Search", href="/search",
                                         active="exact"),
                             dbc.DropdownMenu(
@@ -189,7 +193,7 @@ def sideBar(input1):
                     ),
                     dbc.Nav(
                         [
-                            dbc.NavLink("Watch List", href="/watchlist", active="exact"),
+                            dbc.NavLink("My Alerts", href="/alerts", active="exact"),
                             dbc.NavLink("Entity Search", href="/search",
                                         active="exact"),
                             dbc.DropdownMenu(
