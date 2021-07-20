@@ -23,16 +23,17 @@ from dash.exceptions import PreventUpdate
 BASE_PATH = pathlib.Path(__file__).resolve().parents[1]
 DATA_PATH = BASE_PATH.joinpath("data").resolve()
 entity_df = pd.read_csv(DATA_PATH.joinpath("full_search_list.csv"))
+entity_df['Entity ID'] = entity_df['Entity ID'].astype(int).astype(str)
 
 controls = dbc.Container(
     dbc.Col([
         dbc.Row(
     [
-        dbc.Label("Company Name"),
+        dbc.Label("Entity ID"),
         dcc.Dropdown(
             id="x1",
             options=[
-                {"label": col, "value": col} for col in entity_df['Company Name'].unique()
+                {"label": col, "value": col} for col in entity_df['Entity ID'].unique()
             ],
             style={"width": "300px"}
         ),
@@ -74,10 +75,10 @@ controls = dbc.Container(
     )
     ) 
 
-show_entity=dbc.Row([html.H4("List of Companies")])
+show_entity=dbc.Row([html.H4("List of Companies",style={'margin-left':'40px'})])
 
 
-table=html.Div(id='table2', style={'textAlign': 'left', 'width': '1000px'})
+table=html.Div(id='list-of-search-results', style={'textAlign': 'left', 'width': '1000px'})
 
 layout=dbc.Container(
     [
@@ -92,18 +93,19 @@ layout=dbc.Container(
     ], style={'margin-left': '20%'}
 )
 
-link=[html.A(html.P('View details'),href="/search")]
+link=[html.A(html.P('View details'),href="/premium_content")]
 
 
 @ app.callback(
-    Output("table2", "children"),
+    Output("list-of-search-results", "children"),
     [Input("x1", "value"),Input("x2", "value"),Input("x3", "value"),Input("x4", "value"),Input("x5", "value")]
 )
-def make_all_table(company_name, industry, province, enterprise_type, main_risk):
-    if company_name is None and industry is None and province is None and enterprise_type is None and main_risk is None:
+
+def make_all_table(entity_id, industry, province, enterprise_type, main_risk):
+    if entity_id is None and industry is None and province is None and enterprise_type is None and main_risk is None:
         raise PreventUpdate
     else:
-        df_list = entity_df[(entity_df['Company Name'] == company_name)|(entity_df['Industry'] == industry)|(entity_df['Province'] == province)|(entity_df['Enterprise Type'] == enterprise_type)|(entity_df['Main Risk'] == main_risk)]
-        df_list = df_list[df_list['is_latest']==1][['Company Name', 'Industry','Province','Enterprise Type','Main Risk']]
+        df_list = entity_df[(entity_df['Entity ID'] == entity_id)|(entity_df['Industry'] == industry)|(entity_df['Province'] == province)|(entity_df['Enterprise Type'] == enterprise_type)|(entity_df['Main Risk'] == main_risk)]
+        df_list = df_list[df_list['is_latest']==1][['Entity ID', 'Industry','Province','Enterprise Type','Main Risk']]
         df_list['Details'] = link
         return dbc.Table.from_dataframe(df_list)
