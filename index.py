@@ -10,7 +10,7 @@ import dash
 
 from app import app, server
 from flask_login import logout_user, current_user
-from views import login, error, search, blockchain, profile, user_admin, aboutus, pricing, alerts, data_provider, contribute_data, signup, data_provider, premium_content, payment,fullsearch
+from views import login, error, search, blockchain, profile, user_admin, aboutus, pricing, alerts, data_provider, contribute_data, signup, premium_content, payment,fullsearch
 
 ###############################################################################
 ########### LANDING PAGE LAYOUT ###########
@@ -75,8 +75,8 @@ def displayPage(pathname):
                 return fullsearch.layout
             if current_user.admin == 1: # corporate
                 return fullsearch.layout    
-            elif current_user.admin == 0:
-                return data_provider.layout
+            elif current_user.admin == 0: # real admin
+                return user_admin.layout
         else:
             return login.layout
 
@@ -150,7 +150,7 @@ def displayPage(pathname):
     [Input('pageContent', 'children')])
 def sideBar(input1):
     if current_user.is_authenticated:
-        if current_user.admin == 1:
+        if current_user.admin == 0: # real admin
             navBarContents = html.Div(
                 [   
                     html.P(
@@ -159,8 +159,11 @@ def sideBar(input1):
                     dbc.Nav(
                         [
                             dbc.NavLink("My Alerts", href="/alerts", active="exact"),
-                            dbc.NavLink("Entity Search", href="/search",
+                            dbc.NavLink("Entity Search", href="/fullsearch",
                                         active="exact"),
+                            dbc.NavLink("🔓 FinNUS+", href="/premium_content",
+                                        active="exact"),
+                            dbc.NavLink("Assess my business", href="/contribute_data", active="exact"),
                             dbc.DropdownMenu(
                                 nav=True,
                                 in_navbar=True,
@@ -184,17 +187,18 @@ def sideBar(input1):
             )
             return navBarContents
 
-        elif current_user.admin == 2:
+        elif current_user.admin == 1: # corporate
             navBarContents = html.Div(
                 [   
                     html.P(
-                        "Welcome back! 👋🏽" + current_user.username, className="lead", style={'textAlign': 'center'}
+                        "Welcome back! 👋🏽", className="lead", style={'textAlign': 'center'}
                     ),
                     dbc.Nav(
                         [
                             dbc.NavLink("My Alerts", href="/alerts", active="exact"),
-                            dbc.NavLink("Entity Search", href="/search",
-                                        active="exact"),
+                            dbc.NavLink("Entity Search", href="/fullsearch",active="exact"),
+                            dbc.NavLink("🔓 FinNUS+", href="/premium_content",active="exact"),
+                            dbc.NavLink("Assess my business", href="/contribute_data", active="exact"),
                             dbc.DropdownMenu(
                                 nav=True,
                                 in_navbar=True,
@@ -216,16 +220,19 @@ def sideBar(input1):
             )
             return navBarContents
 
-        elif current_user.admin == 0:
+        elif current_user.admin == 2: # individual
             navBarContents = html.Div(
                 [   
                     html.P(
-                        "Welcome back! 👋🏽" + current_user.username, className="lead", style={'textAlign': 'center'}
+                        "Welcome back! 👋🏽", className="lead", style={'textAlign': 'center'}
                     ),
                     dbc.Nav(
                         [
-                            dbc.NavLink("Account_Summary", href="/data_provider", active="exact"),
-                            dbc.NavLink("Contribute Data", href="/contribute_data", active="exact"),
+                            dbc.NavLink("My Alerts", href="/alerts", active="exact"),
+                            dbc.NavLink("Entity Search", href="/fullsearch",
+                                        active="exact"),
+                            dbc.NavLink("🔓 FinNUS+", href="/premium_content",
+                                        active="exact"),
                             dbc.DropdownMenu(
                                 nav=True,
                                 in_navbar=True,
