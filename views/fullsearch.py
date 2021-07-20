@@ -93,7 +93,7 @@ layout=dbc.Container(
     ], style={'margin-left': '20%'}
 )
 
-link=[html.A(html.P('View details'),href="/premium_content")]
+link=[html.A(html.P('View details'),href="/search")]
 
 
 @ app.callback(

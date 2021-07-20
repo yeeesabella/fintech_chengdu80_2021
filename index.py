@@ -75,7 +75,7 @@ def displayPage(pathname):
             if current_user.admin == 2:
                 return fullsearch.layout
             if current_user.admin == 1:
-                return user_admin.layout    
+                return fullsearch.layout    
             elif current_user.admin == 0:
                 return data_provider.layout
         else:

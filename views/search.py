@@ -22,7 +22,7 @@ from dash.exceptions import PreventUpdate
 
 BASE_PATH = pathlib.Path(__file__).resolve().parents[1]
 DATA_PATH = BASE_PATH.joinpath("data").resolve()
-entity_df = pd.read_csv(DATA_PATH.joinpath("search_result.csv"))
+# entity_df = pd.read_csv(DATA_PATH.joinpath("search_result.csv"))
 watchlist_df = pd.read_csv(DATA_PATH.joinpath("my_watchlist.csv"))
 df_metrics = pd.read_csv(DATA_PATH.joinpath("key_metrics.csv"))
 
@@ -30,7 +30,7 @@ df_metrics = pd.read_csv(DATA_PATH.joinpath("key_metrics.csv"))
 view_risk_analysis = html.Div(
             [
                 dbc.Button(
-                    "View Risk Analysis", id="access-risk_analysis",href='/premium_content',
+                    "View Risk Analysis", id="access-risk_analysis",href='/payment',
                     outline=False, color='secondary',className="mr-2",
                     style={'textAlign': 'center', 'margin-left': '40%', 'width': '200px', 'height': '45px', 'padding': '10px', 'margin-top': '10px',
                            'font-size': '16px'}
@@ -84,22 +84,6 @@ company_news_card = dbc.Card(
     dbc.CardBody(
         [
             html.H4("Recent News", className="card-title"),
-            # html.H4(dbc.NavLink("Is Nike really facing a sneaker shortage?.", active=True, href="https://qz.com/2035396/is-nike-really-facing-a-sneaker-shortage/"))
-            # ,
-            # html.P(
-            #     "Nike could run out of sneakers made in Vietnam as Covid crisis worsens, S&P Global warns.",
-            #     className="card-text", href='https://www.cnbc.com/2021/07/19/nike-could-run-out-of-shoes-from-vietnam-as-covid-worsens-sp-global.html'
-            # ),
-            # dbc.NavLink("Nike could run out of sneakers made in Vietnam as Covid crisis worsens, S&P Global warns.", active=True, href="https://www.cnbc.com/2021/07/19/nike-could-run-out-of-shoes-from-vietnam-as-covid-worsens-sp-global.html")
-            # ,
-            # dbc.NavLink("Nike's 'Star Wars' Sneakers Look Fantastic.", active=True, href="https://kotaku.com/nikes-star-wars-sneakers-look-fantastic-1847316695")
-            # ,
-            # # html.P(
-            # #     "Nike's 'Star Wars' Sneakers Look Fantastic.",
-            # #     className="card-text", href='https://kotaku.com/nikes-star-wars-sneakers-look-fantastic-1847316695'
-            # # )
-            # ,
-
             dbc.Nav(
     [
         dbc.NavItem(dbc.NavLink("Is Nike really facing a sneaker shortage?", active=True, href="https://qz.com/2035396/is-nike-really-facing-a-sneaker-shortage/")),
@@ -135,7 +119,7 @@ size_grid_cards = dbc.Row(children=
 view_forecast = html.Div(
             [
                 dbc.Button(
-                    "Checkout our forecast figures for key metric", id="view_forecast",href='/premium_content',
+                    "Checkout our forecast figures for key metric", id="view_forecast",href='/payment',
                     outline=False, color='secondary',className="mr-2",
                     style={'textAlign': 'center', 'margin-left': '40%', 'width': '400px', 'height': '45px', 'padding': '10px', 'margin-top': '10px',
                            'font-size': '16px'}
