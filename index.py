@@ -10,7 +10,7 @@ import dash
 
 from app import app, server
 from flask_login import logout_user, current_user
-from views import login, error, search, blockchain, profile, user_admin, aboutus, pricing, alerts, data_provider, contribute_data, signup, data_provider, premium_content,payment
+from views import login, error, search, blockchain, profile, user_admin, aboutus, pricing, alerts, data_provider, contribute_data, signup, data_provider, premium_content, payment,fullsearch
 
 ###############################################################################
 ########### LANDING PAGE LAYOUT ###########
@@ -89,16 +89,7 @@ def displayPage(pathname):
             return login.layout
 
     if pathname == '/search':
-        if current_user.is_authenticated:
-            return search.layout
-        else:
-            return login.layout
-
-    if pathname == '/page2':
-        if current_user.is_authenticated:
-            return page2.layout
-        else:
-            return login.layout
+        return search.layout
 
     if pathname == '/profile':
         if current_user.is_authenticated:
@@ -135,12 +126,18 @@ def displayPage(pathname):
 
     if pathname == '/premium_content':
         return premium_content.layout
-
-    if pathname == '/blockchain':
-        return blockchain.layout
-
+    
     if pathname == '/payment':
         return payment.layout
+
+    if pathname == '/blockchain':
+        if current_user.is_authenticated:
+            return blockchain.layout
+        else:
+            return login.layout
+
+    if pathname == '/fullsearch':
+        return fullsearch.layout
 
     else:
         return error.layout
