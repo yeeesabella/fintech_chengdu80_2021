@@ -73,7 +73,7 @@ def displayPage(pathname):
     if pathname == '/':
         if current_user.is_authenticated:
             if current_user.admin == 2:
-                return search.layout
+                return fullsearch.layout
             if current_user.admin == 1:
                 return user_admin.layout    
             elif current_user.admin == 0:
