@@ -33,6 +33,8 @@ variables = ['Total Assets',
 'Net Income',
 'Profit Margin',
 'Total Number Of Employees']
+entity_df['Entity ID'] = entity_df['Entity ID'].astype(int).astype(str)
+
 
 timeseries_controls = dbc.Container(dbc.Row(
     [
