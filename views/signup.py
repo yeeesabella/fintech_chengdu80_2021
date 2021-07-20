@@ -49,7 +49,7 @@ layout = dbc.Container([
                 ),
                 html.Br(),
                 html.Button(
-                    children='CREATE ACCOUNT',
+                    children='Create account',
                     n_clicks=0,
                     type='submit',
                     id='loginButton',

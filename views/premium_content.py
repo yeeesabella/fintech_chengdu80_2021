@@ -22,7 +22,9 @@ import plotly.express as px
 
 BASE_PATH = pathlib.Path(__file__).resolve().parents[1]
 DATA_PATH = BASE_PATH.joinpath("data").resolve()
-entity_df = pd.read_csv(DATA_PATH.joinpath("full_search_list.csv"))
+entity_df = pd.read_csv(DATA_PATH.joinpath("huawei_data.csv"))
+watchlist_df = pd.read_csv(DATA_PATH.joinpath("my_watchlist.csv"))
+
 variables = ['Total Assets',
 'Total Liabilities',
 'Total Equity',
@@ -102,13 +104,21 @@ def tab_content(active_tab):
                                 html.P("The company is exposed to various external factors that have contributed to its operational, legal and macro risk. The primary factors that contribute to its xx risk are shown below. The explainability results are result of our proprietory algorithm which is based blockchain-protected data."),
                                 html.H3(
                                     "Factors influencing the risk classification"),
-                                html.H5("Global SHAP Plot"),
-                                html.Img(src='/assets/global_shap.png', height="500px"),
+                                # html.H4("Global SHAP Plot"),
+                                # html.P(""),
+                                # html.Img(src='/assets/global_shap.png', height="500px"),
                                 html.P(),
-                                html.H5("Local SHAP Plot"),
+                                html.H4("Local SHAP Plot"),
+                                html.P("The output value (f(x)) is the classification class for the observation."),
+                                html.P("Red/blue: Features that push the prediction higher (to the right) are shown in red, and those pushing the prediction lower are in blue."),
+                                dbc.Badge("FinNUS Insights",style={'fontSize':'16px'}),
+                                html.P("From the above SHAP plots, the company’s high credit risk is primarily due to operating cost and tax policies."),
                                 html.Img(src='/assets/SHAP.png', height="500px"),
                                 html.P(),
-                                html.H5("LIME Plot"),
+                                html.H4("LIME Plot"),
+                                html.P("The LIME plots show the different factors affecting the credit and operational risk of the company."),
+                                dbc.Badge("FinNUS Insights",style={'fontSize':'16px'}),
+                                html.P("The company has high probability for credit risk due to non-compliance with tax policies."),
                                 html.Img(src='/assets/LIME.png', height="330px"),
                                 html.P(),
                                 ])
@@ -131,7 +141,7 @@ def tab_content(active_tab):
     Input("variable-of-interest", "value")
 )
 def plot_line_graph(variable_name):
-    df_timeseries = entity_df[(entity_df['Entity ID'] == '2608434')]
+    df_timeseries = entity_df[(entity_df['Entity ID'] == '722691858')]
     fig = px.bar(df_timeseries, x="Year", y=variable_name,color="is_predicted",title=f'Historical {variable_name}')
     return fig
 
@@ -142,18 +152,40 @@ def plot_line_graph(variable_name):
     )
 
 def plot_scatter_graph(variable_1,variable_2):
-    df_timeseries = entity_df[(entity_df['Entity ID'] == '2608434')]
+    df_timeseries = entity_df[(entity_df['Entity ID'] == '722691858')]
     fig = px.scatter(df_timeseries, x=variable_1, y=variable_2,title=f'Scatter Matrix between {variable_1} and {variable_2}')
     fig.update(layout_showlegend=False)
     return fig
 
 layout=dbc.Container(
-                        [html.H2("FinNUS+", style={"margin-left": "100px"}),
-                        dbc.Badge("Entity ID: 2608434", style={
-                                  "fontSize": "24px", "margin-left": "9%"}),
-                        html.P(),
-                        dbc.Badge("Company Name: Nike", style={
-                                  "fontSize": "24px", "margin-left": "9%"}),
+                        [html.H2("FinNUS+", style={"margin-left": "100%"}),
+                        html.Hr(style={'width':'1200px','margin-left':'10%'}),
+                        dbc.Row([html.H4("Entity ID",style={'margin-left':'10%'}),
+                                dbc.Badge("722691858", pill=True,style={"fontSize": "20px", "margin-left": "6%"})]),
+                                html.P(),
+                        dbc.Row([html.H4("Company Name",style={'margin-left':'10%'}),
+                                dbc.Badge("Huawei", pill=True,style={"fontSize": "20px", "margin-left": "3%",'margin-right':'3%'}), 
+        html.Div(
+            [
+                dbc.Button(
+                    "✚ Add to alerts", id="add-to-watchlist-button",
+                    outline=True,color="primary", className="mr-2", n_clicks=0, style={"margin-right": "15px"}
+                ),
+                html.Span(id="example-output",
+                          style={"verticalAlign": "middle"})
+            ]
+        )]),
                         html.P(),
                         card_tabs
                         ], className="mt-4")
+
+
+@app.callback(
+    Output("example-output", "children"), [
+        Input("add-to-watchlist-button", "n_clicks")]
+)
+def on_button_click(n):
+    if n==0:
+        return " "
+    else:
+        return f"✓ Added to alerts!"

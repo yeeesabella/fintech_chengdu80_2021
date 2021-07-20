@@ -193,17 +193,17 @@ def make_item(entity_id):
 
 
 accordion = html.Div(
-    [make_item(2608434), make_item(36393553), make_item(43814551)], className="accordion"
+    [make_item(722691858), make_item(36393553), make_item(43814551)], className="accordion"
 )
 
 
 @ app.callback(
     [Output(f"collapse-{entity_id}", "is_open")
-     for entity_id in [2608434, 36393553, 43814551]],
+     for entity_id in [722691858, 36393553, 43814551]],
     [Input(f"group-{entity_id}-toggle", "n_clicks")
-     for entity_id in [2608434, 36393553, 43814551]],
+     for entity_id in [722691858, 36393553, 43814551]],
     [State(f"collapse-{entity_id}", "is_open")
-     for entity_id in [2608434, 36393553, 43814551]],
+     for entity_id in [722691858, 36393553, 43814551]],
 )
 def toggle_accordion(n1, n2, n3, is_open1, is_open2, is_open3):
     ctx = dash.callback_context
@@ -213,7 +213,7 @@ def toggle_accordion(n1, n2, n3, is_open1, is_open2, is_open3):
     else:
         button_id = ctx.triggered[0]["prop_id"].split(".")[0]
 
-    if button_id == "group-2608434-toggle" and n1:
+    if button_id == "group-722691858-toggle" and n1:
         return not is_open1, False, False
     elif button_id == "group-36393553-toggle" and n2:
         return False, not is_open2, False

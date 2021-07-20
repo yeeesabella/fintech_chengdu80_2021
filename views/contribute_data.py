@@ -16,6 +16,22 @@ import dash_table
 
 
 layout = html.Div([
+        html.Br(),
+        html.H1("Evaluate your business risks", style={"textAlign": "right",'margin-right':'10%'}),
+        html.Hr(style={'width':'1000px'}),
+        dbc.FormGroup(
+            [
+                dbc.Checkbox(
+                    id="standalone-checkbox", className="form-check-input",style={'margin-left':'10%'}
+                ),
+                dbc.Label(
+                    "I want to share my data with FinNUS",
+                    html_for="standalone-checkbox",
+                    className="form-check-label",style={'margin-left':'20%'}
+                ),
+            ],
+            check=False,
+        ),
     dcc.Upload(
         id='upload-data',
         children=html.Div([
@@ -23,7 +39,7 @@ layout = html.Div([
             html.A('Select Files')
         ]),
         style={
-            'width': '50%',
+            'width': '75%',
             'height': '60px',
             'lineHeight': '60px',
             'borderWidth': '1px',
@@ -41,15 +57,15 @@ layout = html.Div([
     html.Div(id='output-datatable'),
                    dbc.Button(children=['Upload'],
                     type='submit',
-                    color='secondary',
+                    color='primary',
                     href='/blockchain',
                     style={'textAlign': 'center', 
-                    'margin-left': '70%', 
+                    'margin-left': '13%', 
                     'margin-top': '10px','right': '20px',
                            'font-size': '16px'
                            }
                 )
-])
+],style={'margin-left':'20%'})
 
 def parse_contents(contents, filename, date):
     content_type, content_string = contents.split(',')
@@ -86,8 +102,7 @@ def parse_contents(contents, filename, date):
         #             style={'textAlign': 'center', 'margin-left': '40%', 'width': '200px', 'height': '45px', 'padding': '10px', 'margin-top': '10px',
         #                    'font-size': '16px'
         #                    }),
-
-        html.Hr(),  # horizontal line
+ # horizontal line
     ])
 
 
