@@ -10,46 +10,82 @@ import dash_html_components as html
 import plotly.graph_objs as go
 from dash.dependencies import Input, Output
 import pathlib
+import time
+
 
 # Path
 BASE_PATH = pathlib.Path(__file__).parent.resolve()
 DATA_PATH = BASE_PATH.joinpath("data").resolve()
 
 
-plans = dbc.Row(
-            [
-                dbc.Col(dbc.Card(
-            dbc.CardBody([
-                html.H4("PAYMENT DETAILS", className="card-title"),
-                dbc.Button("Continue",
-                    type='submit', href="/signup",color="primary"),
-                html.P(),
-                html.P(
-                    "· Industry-first blockchain-secured risk analysis platform",
-                    className="card-text",
-                ),
-                html.P(
-                    "· Real-time business information from our data partners",
-                    className="card-text",
-                ),
-            ],style={'background-color':'#C6D9F1'})
-        ), width=5,style={'height':'100px'})
-            ],
-            justify="middle",style={'margin-left':'550px'}
-        )
-
-cc_details = dbc.FormGroup(
+cc_details = dbc.Row(
     [
-        dbc.Label("Card Holder's Name"),
-        dbc.Input(type="text",style={"width":"5px",'margin-left':'100%'})
-    ]
+        dbc.Col(dbc.Card(
+            dbc.CardBody([
+                html.H3("Payment details", className="card-title"),
+                html.H6("Accepted payments", className="card-title"),
+                dbc.Col([html.Img(src='/assets/accepted_cards.jpeg', style={'width': '90%'}),
+                         html.Img(src='/assets/accepted_cards_alipay_wechat.jpeg', style={'width': '70%'})],
+                        style={'textAlign': 'center'}),
+                html.P(),
+                dbc.RadioItems(
+                    options=[
+                        {"label": "Personal", "value": 1},
+                        {"label": "Business", "value": 2}
+                    ],
+                    value=1,
+                    id="payment-option-input",
+                ),
+                html.P(),
+                dbc.FormGroup(
+                    [
+                        dbc.Label("Name"),
+                        dbc.Input(placeholder="John Doe", type="text"),
+                    ]
+                ), dbc.FormGroup(
+                    [
+                        dbc.Label("Card number"),
+                        dbc.Input(
+                            placeholder="0072 5420 2145 1234", pattern="^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14})$", type="text"),
+                    ]
+                ), dbc.FormGroup(
+                    [
+                        dbc.Label("Expiry date"),
+                        dbc.Input(placeholder="07 / 20", type="text"),
+                    ]
+                ), dbc.FormGroup(
+                    [
+                        dbc.Label("CCV"),
+                        dbc.Input(placeholder="789", type="number"),
+                    ]
+                ),
+                html.Div([dbc.Button("Complete payment",
+                           type='submit', id='loading-input',href="/premium_content", 
+                           color="primary", style={'width': 'auto'}),
+                            dcc.Loading(
+                    id="loading",
+                    children=[html.Div([html.Div(id="loading-output")])],
+                    type="circle",
+                )]),
+                           html.P()
+            ])
+        ), width=5, style={'height': '100px'})
+    ],
+    justify="middle", style={'margin-left': '550px'}
 )
 
 layout = html.Div(
-    [html.Br(),html.H1("Payment gateway", style={'textAlign': 'center'}
-                    ),
-                    html.Br(),html.P("text"),plans,
-                    cc_details
-    ]
+    [html.Br(),
+     # html.H1("Payment gateway", style={'textAlign': 'center'}),
+     html.Br(),
+     cc_details
+     ]
     # style={'margin-right':'20px'}
 )
+
+
+@app.callback(Output("loading-output", "children"), 
+Input("loading-input", "value"))
+def input_triggers_nested(value):
+    time.sleep(1)
+    return value
