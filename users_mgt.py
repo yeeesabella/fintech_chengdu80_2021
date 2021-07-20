@@ -70,4 +70,6 @@ def show_users():
     return users
 
 # add_user('sidharthmittal25', 'admin', 'sidharth.mittal@u.nus.edu', 1)
-# add_user(2, 'bella_nus', 'admin2bella', 'isabella.poh@u.nus.edu', 0)
+# add_user('bella_nus', 'admin2bella', 'isabella.poh@u.nus.edu', 0)
+# add_user('corporate_user', 'corporate_user', 'tester@gmail.com', 1)
+# add_user('individual_user', 'individual_user', 'tester2@gmail.com', 2)

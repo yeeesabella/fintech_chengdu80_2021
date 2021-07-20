@@ -46,7 +46,6 @@ navbar = dbc.Navbar(
             ),
             href="/",
         ),
-        # dbc.Collapse(search_bar, id="navbar-collapse", navbar=True),
         dbc.NavLink("About Us", href="/aboutus", active="exact",style={"color":"#162e44"}),
         dbc.NavLink("Pricing", href="/pricing", active="exact",style={"color":"#162e44"}),
     ],
@@ -72,9 +71,9 @@ app.layout = html.Div([
 def displayPage(pathname):
     if pathname == '/':
         if current_user.is_authenticated:
-            if current_user.admin == 2:
+            if current_user.admin == 2: # individual
                 return fullsearch.layout
-            if current_user.admin == 1:
+            if current_user.admin == 1: # corporate
                 return fullsearch.layout    
             elif current_user.admin == 0:
                 return data_provider.layout
