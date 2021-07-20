@@ -1,0 +1,7 @@
+﻿Company Name,Entity ID,Year,is_latest,is_predicted,Main Risk,industry_code,Industry,Region Type,Province,Total Assets,Total Liabilities,Total Equity,Debt to Equity (DE) Ratio,Debt Ratio,Return on Assets (ROA),Return on Equity (ROE),Net Income,Profit Margin,Total Number Of Employees,Registered capital,Paid Up Capital
+Huawei,722691858,2014,0,0,Loan Risk,10,Information Technology,415,Anhui,6,12.3,-3.4,-3.6,2.1,-1.17,2.04,-7,0,26,300,3
+Huawei,722691858,2015,0,0,Loan Risk,10,Information Technology,415,Anhui,63.4,14.9,49.5,0.3,0.2,0.78,1,49.7,0.01,20,300,3
+Huawei,722691858,2016,0,0,Loan Risk,10,Information Technology,415,Anhui,103,41,61,0.7,0.4,0.11,0.19,11.6,0.02,24,300,3
+Huawei,722691858,2017,0,0,Loan Risk,10,Information Technology,415,Anhui,74.5,12.3,62.6,0.2,0.2,0.03,0.04,2.4,0.02,32,300,3
+Huawei,722691858,2018,1,0,Loan Risk,10,Information Technology,415,Anhui,83,10.6,73.1,0.1,0.1,0.12,0.14,10.2,0.05,37,300,3
+Huawei,722691858,2019,0,1,Loan Risk,10,Information Technology,415,Anhui,86.9,21.3,65.6,0.1,0.1,0.12,0.14,8.1,0.03,31,300,3

@@ -1,360 +1,153 @@
-﻿entid,province,province_name,industry,industry_name,risk,main_risk
-722691858,1,Beijing,10,Information Technology,2,Loan Risk
-705310922,1,Beijing,11,Hospitality,2,Loan Risk
-412086145,1,Beijing,11,Hospitality,2,Loan Risk
-412086145,1,Beijing,11,Hospitality,2,Loan Risk
-412086145,1,Beijing,11,Hospitality,2,Loan Risk
-412086145,1,Beijing,11,Hospitality,2,Loan Risk
-1116571015,1,Beijing,11,Hospitality,,
-500970908,1,Beijing,10,Information Technology,2,Loan Risk
-500970908,1,Beijing,10,Information Technology,2,Loan Risk
-500970908,1,Beijing,10,Information Technology,2,Loan Risk
-500970908,1,Beijing,10,Information Technology,2,Loan Risk
-500970908,1,Beijing,10,Information Technology,2,Loan Risk
-500970908,1,Beijing,10,Information Technology,2,Loan Risk
-500970908,1,Beijing,10,Information Technology,2,Loan Risk
-500970908,1,Beijing,10,Information Technology,2,Loan Risk
-1057654777,1,Beijing,11,Hospitality,3,Operation Risk
-371713118,1,Beijing,11,Hospitality,2,Loan Risk
-882446289,1,Beijing,11,Hospitality,,
-882446289,1,Beijing,11,Hospitality,,
-882446289,1,Beijing,11,Hospitality,,
-882446289,1,Beijing,11,Hospitality,,
-882446289,1,Beijing,11,Hospitality,,
-882446289,1,Beijing,11,Hospitality,,
-882446289,1,Beijing,11,Hospitality,,
-882446289,1,Beijing,11,Hospitality,,
-882446289,1,Beijing,11,Hospitality,,
-882446289,1,Beijing,11,Hospitality,,
-882446289,1,Beijing,11,Hospitality,,
-882446289,1,Beijing,11,Hospitality,,
-882446289,1,Beijing,11,Hospitality,,
-882446289,1,Beijing,11,Hospitality,,
-882446289,1,Beijing,11,Hospitality,,
-882446289,1,Beijing,11,Hospitality,,
-882446289,1,Beijing,11,Hospitality,,
-882446289,1,Beijing,11,Hospitality,,
-882446289,1,Beijing,11,Hospitality,,
-882446289,1,Beijing,11,Hospitality,,
-882446289,1,Beijing,11,Hospitality,,
-882446289,1,Beijing,11,Hospitality,,
-882446289,1,Beijing,11,Hospitality,,
-882446289,1,Beijing,11,Hospitality,,
-882446289,1,Beijing,11,Hospitality,,
-882446289,1,Beijing,11,Hospitality,,
-548493601,1,Beijing,9,Finance,2,Loan Risk
-424989205,0,Anhui,11,Hospitality,,
-162729196,2,Fujian,10,Information Technology,,
-309977928,2,Fujian,11,Hospitality,3,Operation Risk
-558388192,2,Fujian,11,Hospitality,3,Operation Risk
-896876904,2,Fujian,11,Hospitality,3,Operation Risk
-206555162,2,Fujian,11,Hospitality,3,Operation Risk
-1157977132,2,Fujian,4,Education ,3,Operation Risk
-580170754,2,Fujian,11,Hospitality,3,Operation Risk
-100425290,2,Fujian,11,Hospitality,3,Operation Risk
-388516157,2,Fujian,10,Information Technology,3,Operation Risk
-698946445,2,Fujian,11,Hospitality,3,Operation Risk
-1141344782,2,Fujian,11,Hospitality,3,Operation Risk
-570077886,2,Fujian,9,Finance,3,Operation Risk
-672082440,2,Fujian,11,Hospitality,3,Operation Risk
-899568771,2,Fujian,11,Hospitality,,
-726735583,2,Fujian,11,Hospitality,,
-726735583,2,Fujian,11,Hospitality,,
-726735583,2,Fujian,11,Hospitality,,
-783395514,2,Fujian,11,Hospitality,3,Operation Risk
-738818162,2,Fujian,11,Hospitality,3,Operation Risk
-752577853,2,Fujian,11,Hospitality,3,Operation Risk
-471239918,2,Fujian,11,Hospitality,3,Operation Risk
-589353712,2,Fujian,10,Information Technology,3,Operation Risk
-1189025517,2,Fujian,11,Hospitality,3,Operation Risk
-993295834,2,Fujian,11,Hospitality,3,Operation Risk
-491251458,2,Fujian,8,Fashion,3,Operation Risk
-491251458,2,Fujian,8,Fashion,3,Operation Risk
-876795652,2,Fujian,5,Entertainment,3,Operation Risk
-876795652,2,Fujian,5,Entertainment,3,Operation Risk
-876795652,2,Fujian,5,Entertainment,3,Operation Risk
-781576227,2,Fujian,10,Information Technology,3,Operation Risk
-702990878,2,Fujian,10,Information Technology,3,Operation Risk
-535352782,2,Fujian,11,Hospitality,3,Operation Risk
-1204996213,2,Fujian,11,Hospitality,3,Operation Risk
-534082754,2,Fujian,11,Hospitality,3,Operation Risk
-886830685,2,Fujian,11,Hospitality,,
-434535004,2,Fujian,10,Information Technology,3,Operation Risk
-543890956,2,Fujian,11,Hospitality,3,Operation Risk
-199732240,2,Fujian,11,Hospitality,3,Operation Risk
-682537294,2,Fujian,11,Hospitality,3,Operation Risk
-640450849,2,Fujian,11,Hospitality,3,Operation Risk
-640450849,2,Fujian,11,Hospitality,3,Operation Risk
-333686413,2,Fujian,10,Information Technology,3,Operation Risk
-982046039,2,Fujian,0,Advertising,3,Operation Risk
-74906695,2,Fujian,8,Fashion,3,Operation Risk
-884853596,2,Fujian,9,Finance,,
-500016024,2,Fujian,10,Information Technology,3,Operation Risk
-500016024,2,Fujian,10,Information Technology,3,Operation Risk
-479006038,2,Fujian,0,Advertising,3,Operation Risk
-530649537,2,Fujian,11,Hospitality,3,Operation Risk
-572538608,2,Fujian,9,Finance,3,Operation Risk
-159157541,2,Fujian,0,Advertising,,
-435933247,2,Fujian,10,Information Technology,,
-858118052,2,Fujian,11,Hospitality,3,Operation Risk
-858118052,2,Fujian,11,Hospitality,3,Operation Risk
-532398636,2,Fujian,11,Hospitality,3,Operation Risk
-440133186,2,Fujian,11,Hospitality,3,Operation Risk
-499232727,2,Fujian,11,Hospitality,3,Operation Risk
-1173942093,2,Fujian,11,Hospitality,3,Operation Risk
-588320433,2,Fujian,11,Hospitality,3,Operation Risk
-60973352,2,Fujian,16,Mining,3,Operation Risk
-514259305,2,Fujian,11,Hospitality,3,Operation Risk
-346671211,2,Fujian,10,Information Technology,3,Operation Risk
-589095801,2,Fujian,11,Hospitality,3,Operation Risk
-589095801,2,Fujian,11,Hospitality,3,Operation Risk
-377705656,2,Fujian,11,Hospitality,,
-842088100,2,Fujian,11,Hospitality,,
-314383006,2,Fujian,10,Information Technology,3,Operation Risk
-690756846,2,Fujian,11,Hospitality,,
-779928235,2,Fujian,9,Finance,,
-150680780,2,Fujian,10,Information Technology,3,Operation Risk
-95375757,2,Fujian,10,Information Technology,3,Operation Risk
-132799368,2,Fujian,10,Information Technology,3,Operation Risk
-312152062,2,Fujian,10,Information Technology,3,Operation Risk
-440481144,2,Fujian,11,Hospitality,3,Operation Risk
-115726514,2,Fujian,11,Hospitality,3,Operation Risk
-1151354220,2,Fujian,11,Hospitality,3,Operation Risk
-460104494,2,Fujian,10,Information Technology,3,Operation Risk
-460104494,2,Fujian,10,Information Technology,3,Operation Risk
-460104494,2,Fujian,10,Information Technology,3,Operation Risk
-763577842,2,Fujian,11,Hospitality,3,Operation Risk
-349722036,2,Fujian,11,Hospitality,3,Operation Risk
-773481184,2,Fujian,9,Finance,3,Operation Risk
-1124148664,2,Fujian,11,Hospitality,3,Operation Risk
-1000685535,2,Fujian,11,Hospitality,3,Operation Risk
-207483814,2,Fujian,10,Information Technology,3,Operation Risk
-302806995,2,Fujian,11,Hospitality,3,Operation Risk
-1155046364,2,Fujian,10,Information Technology,3,Operation Risk
-920321812,2,Fujian,10,Information Technology,3,Operation Risk
-511889456,2,Fujian,11,Hospitality,3,Operation Risk
-793823151,2,Fujian,10,Information Technology,3,Operation Risk
-21495398,2,Fujian,11,Hospitality,3,Operation Risk
-984763588,2,Fujian,9,Finance,3,Operation Risk
-702255789,2,Fujian,11,Hospitality,3,Operation Risk
-702255789,2,Fujian,11,Hospitality,3,Operation Risk
-757657917,2,Fujian,14,Manufacturing,3,Operation Risk
-757657917,2,Fujian,14,Manufacturing,3,Operation Risk
-642702743,2,Fujian,11,Hospitality,3,Operation Risk
-676953669,2,Fujian,11,Hospitality,3,Operation Risk
-98029885,2,Fujian,11,Hospitality,3,Operation Risk
-1170430006,2,Fujian,11,Hospitality,3,Operation Risk
-1171029049,2,Fujian,11,Hospitality,3,Operation Risk
-1134988699,2,Fujian,0,Advertising,3,Operation Risk
-354934080,2,Fujian,10,Information Technology,3,Operation Risk
-501284869,2,Fujian,10,Information Technology,3,Operation Risk
-389991809,2,Fujian,10,Information Technology,3,Operation Risk
-823753595,2,Fujian,11,Hospitality,3,Operation Risk
-103873188,2,Fujian,11,Hospitality,3,Operation Risk
-931854045,2,Fujian,9,Finance,3,Operation Risk
-236203073,2,Fujian,5,Entertainment,,
-925128027,2,Fujian,11,Hospitality,3,Operation Risk
-869052952,2,Fujian,11,Hospitality,3,Operation Risk
-706992684,2,Fujian,10,Information Technology,3,Operation Risk
-541074519,2,Fujian,11,Hospitality,3,Operation Risk
-301743547,2,Fujian,11,Hospitality,3,Operation Risk
-779108758,2,Fujian,10,Information Technology,3,Operation Risk
-201934483,2,Fujian,11,Hospitality,3,Operation Risk
-898832183,2,Fujian,10,Information Technology,3,Operation Risk
-976639581,2,Fujian,11,Hospitality,3,Operation Risk
-228182297,2,Fujian,9,Finance,3,Operation Risk
-971837647,2,Fujian,11,Hospitality,3,Operation Risk
-338094005,2,Fujian,10,Information Technology,3,Operation Risk
-637079923,2,Fujian,11,Hospitality,3,Operation Risk
-664043828,2,Fujian,11,Hospitality,3,Operation Risk
-1148827754,2,Fujian,11,Hospitality,3,Operation Risk
-93483092,2,Fujian,5,Entertainment,3,Operation Risk
-278469566,2,Fujian,11,Hospitality,,
-860165968,2,Fujian,11,Hospitality,3,Operation Risk
-36314847,2,Fujian,9,Finance,3,Operation Risk
-499835405,2,Fujian,11,Hospitality,3,Operation Risk
-796034628,2,Fujian,10,Information Technology,,
-908910575,2,Fujian,11,Hospitality,,
-876098486,2,Fujian,11,Hospitality,3,Operation Risk
-1156613538,2,Fujian,11,Hospitality,3,Operation Risk
-91850727,2,Fujian,11,Hospitality,3,Operation Risk
-597303107,2,Fujian,9,Finance,3,Operation Risk
-594044076,2,Fujian,9,Finance,3,Operation Risk
-855315125,2,Fujian,10,Information Technology,3,Operation Risk
-96684219,2,Fujian,10,Information Technology,3,Operation Risk
-559056077,2,Fujian,10,Information Technology,3,Operation Risk
-234672002,2,Fujian,11,Hospitality,3,Operation Risk
-152935696,2,Fujian,10,Information Technology,,
-279413112,2,Fujian,10,Information Technology,3,Operation Risk
-21013823,2,Fujian,10,Information Technology,3,Operation Risk
-795933195,2,Fujian,11,Hospitality,3,Operation Risk
-1160651495,2,Fujian,10,Information Technology,3,Operation Risk
-1160651495,2,Fujian,10,Information Technology,3,Operation Risk
-194632375,2,Fujian,11,Hospitality,3,Operation Risk
-1001486243,2,Fujian,11,Hospitality,3,Operation Risk
-723394308,2,Fujian,11,Hospitality,3,Operation Risk
-487069415,2,Fujian,11,Hospitality,3,Operation Risk
-498015441,2,Fujian,14,Manufacturing,,
-126131663,2,Fujian,11,Hospitality,3,Operation Risk
-304651929,2,Fujian,11,Hospitality,3,Operation Risk
-691933262,2,Fujian,11,Hospitality,3,Operation Risk
-660529291,2,Fujian,11,Hospitality,3,Operation Risk
-863065175,2,Fujian,11,Hospitality,3,Operation Risk
-519478266,2,Fujian,9,Finance,3,Operation Risk
-616014124,2,Fujian,11,Hospitality,3,Operation Risk
-1151352690,2,Fujian,11,Hospitality,3,Operation Risk
-687434437,2,Fujian,10,Information Technology,3,Operation Risk
-545110976,2,Fujian,9,Finance,,
-545110976,2,Fujian,9,Finance,,
-640634768,2,Fujian,10,Information Technology,3,Operation Risk
-417024900,2,Fujian,11,Hospitality,3,Operation Risk
-1020651292,2,Fujian,11,Hospitality,3,Operation Risk
-1020651292,2,Fujian,11,Hospitality,3,Operation Risk
-210467886,2,Fujian,11,Hospitality,3,Operation Risk
-901442380,2,Fujian,11,Hospitality,3,Operation Risk
-72751747,2,Fujian,0,Advertising,3,Operation Risk
-179736494,2,Fujian,10,Information Technology,3,Operation Risk
-968596017,2,Fujian,11,Hospitality,3,Operation Risk
-149089962,2,Fujian,9,Finance,3,Operation Risk
-1084529852,2,Fujian,11,Hospitality,3,Operation Risk
-28115559,2,Fujian,10,Information Technology,3,Operation Risk
-879756096,2,Fujian,10,Information Technology,3,Operation Risk
-1050687001,0,Anhui,12,Health Services,,
-1050687001,0,Anhui,12,Health Services,,
-212403366,0,Anhui,5,Entertainment,,
-212403366,5,Henan,5,Entertainment,,
-361015755,5,Henan,12,Health Services,,
-694908503,0,Anhui,5,Entertainment,,
-694908503,5,Henan,5,Entertainment,,
-368305758,5,Henan,11,Hospitality,,
-615971298,0,Anhui,17,Retail,,
-615971298,0,Anhui,17,Retail,,
-1064559629,0,Anhui,5,Entertainment,,
-1064559629,5,Henan,5,Entertainment,,
-1101944932,0,Anhui,6,Shipping,,
-1101944932,5,Henan,6,Shipping,,
-63165459,0,Anhui,11,Hospitality,,
-790389876,0,Anhui,5,Entertainment,,
-790389876,5,Henan,5,Entertainment,,
-914550718,0,Anhui,5,Entertainment,,
-518382911,0,Anhui,12,Health Services,,
-941804680,0,Anhui,5,Entertainment,,
-708538081,5,Henan,12,Health Services,,
-159872005,5,Henan,17,Retail,,
-1183518695,0,Anhui,10,Information Technology,,
-996056694,0,Anhui,5,Entertainment,,
-724805518,1,Beijing,12,Health Services,,
-85580779,1,Beijing,14,Manufacturing,,
-159559301,1,Beijing,2,Construction ,,
-159559301,1,Beijing,2,Construction ,,
-403721550,1,Beijing,12,Health Services,,
-834914998,1,Beijing,2,Construction ,,
-40431646,1,Beijing,12,Health Services,,
-392017860,1,Beijing,14,Manufacturing,,
-694488174,1,Beijing,14,Manufacturing,,
-694488174,1,Beijing,14,Manufacturing,,
-1031468583,1,Beijing,5,Entertainment,,
-1234077177,5,Henan,5,Entertainment,,
-725319392,5,Henan,4,Education ,,
-659104221,5,Henan,0,Advertising,,
-68687328,5,Henan,5,Entertainment,,
-166869326,5,Henan,7,Farming,,
-1194794368,5,Henan,2,Construction ,,
-701620490,5,Henan,11,Hospitality,,
-739378963,5,Henan,2,Construction ,,
-739378963,5,Henan,2,Construction ,,
-739378963,5,Henan,2,Construction ,,
-739378963,5,Henan,2,Construction ,,
-739378963,5,Henan,2,Construction ,,
-739378963,5,Henan,2,Construction ,,
-739378963,5,Henan,2,Construction ,,
-739378963,5,Henan,2,Construction ,,
-739378963,5,Henan,2,Construction ,,
-25272201,5,Henan,11,Hospitality,,
-1213633567,5,Henan,5,Entertainment,,
-138874014,5,Henan,4,Education ,,
-246779029,5,Henan,5,Entertainment,,
-624346306,5,Henan,2,Construction ,,
-866893485,5,Henan,5,Entertainment,,
-756490410,5,Henan,5,Entertainment,,
-806793229,5,Henan,8,Fashion,,
-634715264,5,Henan,5,Entertainment,,
-979782641,5,Henan,10,Information Technology,,
-1184142613,6,Hubei,2,Construction ,,
-549190134,2,Fujian,12,Health Services,,
-1018645353,2,Fujian,4,Education ,,
-5503066,2,Fujian,11,Hospitality,,
-1019081039,2,Fujian,8,Fashion,,
-26575424,2,Fujian,11,Hospitality,,
-646618607,2,Fujian,2,Construction ,,
-913367375,2,Fujian,12,Health Services,,
-1121720437,2,Fujian,5,Entertainment,,
-106493943,2,Fujian,2,Construction ,,
-367149101,2,Fujian,11,Hospitality,,
-23396983,2,Fujian,2,Construction ,,
-1050585695,2,Fujian,4,Education ,,
-706063241,2,Fujian,11,Hospitality,,
-271874611,2,Fujian,5,Entertainment,,
-754401537,2,Fujian,5,Entertainment,,
-1054940749,2,Fujian,2,Construction ,,
-532703855,2,Fujian,5,Entertainment,,
-532703855,2,Fujian,5,Entertainment,,
-588112005,2,Fujian,2,Construction ,,
-120527222,2,Fujian,11,Hospitality,,
-894251596,2,Fujian,5,Entertainment,,
-844571032,2,Fujian,0,Advertising,,
-1031288467,2,Fujian,2,Construction ,,
-244208972,9,Sichuan,0,Advertising,,
-581905153,9,Sichuan,8,Fashion,,
-553181905,9,Sichuan,11,Hospitality,,
-751034805,9,Sichuan,2,Construction ,,
-928467304,9,Sichuan,5,Entertainment,,
-814820539,8,Jiangsu,5,Entertainment,,
-205974207,8,Jiangsu,5,Entertainment,,
-289045650,8,Jiangsu,5,Entertainment,,
-804550396,8,Jiangsu,14,Manufacturing,,
-1157719592,8,Jiangsu,11,Hospitality,,
-1148422298,8,Jiangsu,12,Health Services,,
-589907050,8,Jiangsu,5,Entertainment,,
-286249077,8,Jiangsu,10,Information Technology,,
-767933803,8,Jiangsu,12,Health Services,,
-545229784,8,Jiangsu,11,Hospitality,,
-545229784,5,Henan,11,Hospitality,,
-369907769,8,Jiangsu,9,Finance,,
-595732139,8,Jiangsu,5,Entertainment,,
-975529059,8,Jiangsu,5,Entertainment,,
-196371498,8,Jiangsu,5,Entertainment,,
-342149367,8,Jiangsu,11,Hospitality,,
-342149367,5,Henan,11,Hospitality,,
-665767247,8,Jiangsu,5,Entertainment,,
-505192797,8,Jiangsu,4,Education ,,
-505192797,5,Henan,4,Education ,,
-839154556,8,Jiangsu,5,Entertainment,,
-1063866717,5,Henan,5,Entertainment,,
-855724058,8,Jiangsu,5,Entertainment,,
-489696441,8,Jiangsu,8,Fashion,,
-1142187243,8,Jiangsu,11,Hospitality,,
-484409931,3,Guangdong,11,Hospitality,,
-1217755268,3,Guangdong,4,Education ,,
-266874547,3,Guangdong,5,Entertainment,,
-316944600,3,Guangdong,11,Hospitality,,
-321871524,3,Guangdong,1,Agriculture ,,
-744703328,3,Guangdong,5,Entertainment,,
-690187757,3,Guangdong,5,Entertainment,,
-1227739246,3,Guangdong,5,Entertainment,,
-322152429,3,Guangdong,11,Hospitality,,
-508315671,3,Guangdong,12,Health Services,,
-1134929168,3,Guangdong,5,Entertainment,,
-284014779,4,Gansu,11,Hospitality,,
-791724997,4,Gansu,5,Entertainment,,
-420705509,8,Jiangsu,7,Farming,,
-668155588,7,Jilin,11,Hospitality,,
-577990491,7,Jilin,0,Advertising,,
-176047002,7,Jilin,5,Entertainment,,
-21798098,0,Anhui,8,Fashion,,
-738883150,7,Jilin,4,Education ,,
-738883150,7,Jilin,4,Education ,,
-738883150,7,Jilin,4,Education ,,
-738883150,7,Jilin,4,Education ,,
-939065635,0,Anhui,19,Transportation,,
-81775757,0,Anhui,5,Entertainment,,
+﻿Entity ID,Province,Industry,Main Risk
+722691858,Beijing,Information Technology,Loan Risk
+705310922,Beijing,Hospitality,Legal Risk
+412086145,Beijing,Information Technology,Loan Risk
+1116571015,Beijing,Information Technology,Loan Risk
+500970908,Beijing,Information Technology,Loan Risk
+500970908,Beijing,Hospitality,Operation Risk
+500970908,Beijing,Hospitality,Loan Risk
+882446289,Beijing,Finance,Loan Risk
+882446289,Fujian,Hospitality,Operation Risk
+548493601,Fujian,Hospitality,Operation Risk
+424989205,Fujian,Hospitality,Operation Risk
+162729196,Fujian,Education ,Operation Risk
+309977928,Fujian,Hospitality,Operation Risk
+558388192,Fujian,Hospitality,Operation Risk
+896876904,Fujian,Information Technology,Operation Risk
+206555162,Fujian,Hospitality,Operation Risk
+1157977132,Fujian,Hospitality,Operation Risk
+580170754,Fujian,Finance,Operation Risk
+100425290,Fujian,Hospitality,Operation Risk
+672082440,Fujian,Hospitality,Operation Risk
+899568771,Fujian,Hospitality,Operation Risk
+726735583,Fujian,Hospitality,Operation Risk
+726735583,Fujian,Information Technology,Operation Risk
+783395514,Fujian,Hospitality,Operation Risk
+738818162,Fujian,Hospitality,Operation Risk
+752577853,Fujian,Fashion,Operation Risk
+471239918,Fujian,Fashion,Operation Risk
+589353712,Fujian,Entertainment,Operation Risk
+1189025517,Fujian,Entertainment,Operation Risk
+993295834,Fujian,Entertainment,Operation Risk
+491251458,Fujian,Information Technology,Operation Risk
+876795652,Fujian,Hospitality,Operation Risk
+702990878,Fujian,Information Technology,Operation Risk
+535352782,Fujian,Hospitality,Operation Risk
+1204996213,Fujian,Hospitality,Operation Risk
+534082754,Fujian,Hospitality,Operation Risk
+886830685,Fujian,Hospitality,Operation Risk
+434535004,Fujian,Hospitality,Operation Risk
+543890956,Fujian,Information Technology,Operation Risk
+199732240,Fujian,Advertising,Operation Risk
+682537294,Fujian,Fashion,Operation Risk
+640450849,Fujian,Information Technology,Operation Risk
+333686413,Fujian,Information Technology,Operation Risk
+982046039,Fujian,Advertising,Operation Risk
+74906695,Fujian,Hospitality,Operation Risk
+884853596,Fujian,Finance,Operation Risk
+479006038,Fujian,Hospitality,Operation Risk
+530649537,Fujian,Hospitality,Operation Risk
+572538608,Fujian,Hospitality,Operation Risk
+159157541,Fujian,Hospitality,Operation Risk
+435933247,Fujian,Hospitality,Operation Risk
+858118052,Fujian,Hospitality,Operation Risk
+532398636,Fujian,Mining,Operation Risk
+440133186,Fujian,Hospitality,Operation Risk
+499232727,Fujian,Information Technology,Operation Risk
+1173942093,Fujian,Hospitality,Operation Risk
+588320433,Fujian,Hospitality,Operation Risk
+346671211,Fujian,Information Technology,Operation Risk
+377705656,Fujian,Information Technology,Operation Risk
+842088100,Fujian,Information Technology,Operation Risk
+314383006,Fujian,Information Technology,Operation Risk
+690756846,Fujian,Information Technology,Operation Risk
+779928235,Fujian,Hospitality,Operation Risk
+150680780,Fujian,Hospitality,Operation Risk
+95375757,Fujian,Hospitality,Operation Risk
+132799368,Fujian,Information Technology,Operation Risk
+312152062,Fujian,Information Technology,Operation Risk
+440481144,Fujian,Information Technology,Operation Risk
+115726514,Fujian,Hospitality,Operation Risk
+1151354220,Fujian,Hospitality,Operation Risk
+460104494,Fujian,Finance,Operation Risk
+460104494,Fujian,Hospitality,Operation Risk
+763577842,Fujian,Information Technology,Operation Risk
+349722036,Fujian,Hospitality,Operation Risk
+773481184,Fujian,Information Technology,Operation Risk
+1124148664,Fujian,Information Technology,Operation Risk
+1000685535,Fujian,Hospitality,Operation Risk
+207483814,Fujian,Information Technology,Operation Risk
+302806995,Fujian,Hospitality,Operation Risk
+1155046364,Fujian,Finance,Operation Risk
+920321812,Fujian,Hospitality,Operation Risk
+511889456,Fujian,Hospitality,Operation Risk
+793823151,Fujian,Manufacturing,Operation Risk
+21495398,Fujian,Manufacturing,Operation Risk
+984763588,Fujian,Hospitality,Operation Risk
+702255789,Fujian,Hospitality,Operation Risk
+757657917,Fujian,Hospitality,Operation Risk
+642702743,Fujian,Advertising,Operation Risk
+676953669,Fujian,Information Technology,Operation Risk
+98029885,Fujian,Information Technology,Operation Risk
+1170430006,Fujian,Information Technology,Operation Risk
+1171029049,Fujian,Hospitality,Operation Risk
+1134988699,Fujian,Hospitality,Operation Risk
+354934080,Fujian,Finance,Operation Risk
+389991809,Fujian,Hospitality,Operation Risk
+823753595,Fujian,Hospitality,Operation Risk
+103873188,Fujian,Information Technology,Operation Risk
+931854045,Fujian,Hospitality,Operation Risk
+236203073,Fujian,Hospitality,Operation Risk
+925128027,Fujian,Information Technology,Operation Risk
+869052952,Fujian,Hospitality,Operation Risk
+706992684,Fujian,Information Technology,Operation Risk
+541074519,Fujian,Hospitality,Operation Risk
+301743547,Fujian,Finance,Operation Risk
+779108758,Fujian,Hospitality,Operation Risk
+201934483,Fujian,Information Technology,Operation Risk
+898832183,Fujian,Hospitality,Operation Risk
+976639581,Fujian,Hospitality,Operation Risk
+228182297,Fujian,Hospitality,Operation Risk
+971837647,Fujian,Entertainment,Operation Risk
+637079923,Fujian,Hospitality,Operation Risk
+664043828,Fujian,Finance,Operation Risk
+1148827754,Fujian,Hospitality,Operation Risk
+860165968,Fujian,Hospitality,Operation Risk
+36314847,Fujian,Hospitality,Operation Risk
+499835405,Fujian,Hospitality,Operation Risk
+796034628,Fujian,Finance,Operation Risk
+908910575,Fujian,Finance,Operation Risk
+876098486,Fujian,Information Technology,Operation Risk
+1156613538,Fujian,Information Technology,Operation Risk
+91850727,Fujian,Information Technology,Operation Risk
+597303107,Fujian,Hospitality,Operation Risk
+855315125,Fujian,Information Technology,Operation Risk
+96684219,Fujian,Information Technology,Operation Risk
+559056077,Fujian,Hospitality,Operation Risk
+234672002,Fujian,Information Technology,Operation Risk
+152935696,Fujian,Information Technology,Operation Risk
+279413112,Fujian,Hospitality,Operation Risk
+21013823,Fujian,Hospitality,Operation Risk
+795933195,Fujian,Hospitality,Operation Risk
+1160651495,Fujian,Hospitality,Operation Risk
+194632375,Fujian,Hospitality,Operation Risk
+1001486243,Fujian,Hospitality,Operation Risk
+723394308,Fujian,Hospitality,Operation Risk
+487069415,Fujian,Hospitality,Operation Risk
+498015441,Fujian,Hospitality,Operation Risk
+126131663,Fujian,Finance,Operation Risk
+304651929,Fujian,Hospitality,Operation Risk
+691933262,Fujian,Hospitality,Operation Risk
+660529291,Fujian,Information Technology,Operation Risk
+616014124,Fujian,Information Technology,Operation Risk
+1151352690,Fujian,Hospitality,Operation Risk
+687434437,Fujian,Hospitality,Operation Risk
+545110976,Fujian,Hospitality,Operation Risk
+640634768,Fujian,Hospitality,Operation Risk
+417024900,Fujian,Advertising,Operation Risk
+1020651292,Fujian,Information Technology,Operation Risk
+1020651292,Fujian,Hospitality,Operation Risk
+210467886,Fujian,Finance,Operation Risk
+901442380,Fujian,Hospitality,Operation Risk
+72751747,Fujian,Information Technology,Operation Risk
+179736494,Fujian,Information Technology,Operation Risk
