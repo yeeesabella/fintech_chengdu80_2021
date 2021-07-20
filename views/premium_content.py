@@ -96,14 +96,19 @@ def tab_content(active_tab):
                   style={'width': '1000px'})
         ])
     elif active_tab == 'tab-2':
-        return dbc.Container([html.H4("Insights into FinNUS Risk Scores"),
+        return dbc.Container([html.H3("Insights into FinNUS Risk Scores"),
                                 html.P("The company is exposed to various external factors that have contributed to its operational, legal and macro risk. The primary factors that contribute to its xx risk are shown below. The explainability results are result of our proprietory algorithm which is based blockchain-protected data."),
-                                html.H4(
-                                    "Factors influencing the risk classification (placeholder images)"),
-                                dbc.Row([html.Img(src='/assets/shap_plot.png', height="330px"),
-                                        html.Img(
-                                            src='/assets/shap_plot.png', height="330px"),
-                                        html.Img(src='/assets/shap_plot.png', height="330px")])
+                                html.H3(
+                                    "Factors influencing the risk classification"),
+                                html.H5("Global SHAP Plot"),
+                                html.Img(src='/assets/global_shap.png', height="500px"),
+                                html.P(),
+                                html.H5("Local SHAP Plot"),
+                                html.Img(src='/assets/SHAP.png', height="500px"),
+                                html.P(),
+                                html.H5("LIME Plot"),
+                                html.Img(src='/assets/LIME.png', height="330px"),
+                                html.P(),
                                 ])
     elif active_tab == 'tab-3':
         return dbc.Container([
