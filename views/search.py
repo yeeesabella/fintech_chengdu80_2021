@@ -22,108 +22,120 @@ from dash.exceptions import PreventUpdate
 
 BASE_PATH = pathlib.Path(__file__).resolve().parents[1]
 DATA_PATH = BASE_PATH.joinpath("data").resolve()
-entity_df = pd.read_csv(DATA_PATH.joinpath("tax_year.csv"))
+entity_df = pd.read_csv(DATA_PATH.joinpath("search_result.csv"))
 watchlist_df = pd.read_csv(DATA_PATH.joinpath("my_watchlist.csv"))
+df_metrics = pd.read_csv(DATA_PATH.joinpath("key_metrics.csv"))
 
 
-controls = dbc.Container(dbc.Row(
-    [
-        dbc.Label("Entity ID", style={"margin-right": "20px"}),
-        dcc.Dropdown(
-            id="x-variable",
-            options=[
-                {"label": col, "value": col} for col in entity_df['entid'].unique()
-            ],
-            value="Company ID", style={"width": "20rem", "margin-right": "20px"}
-        ),
-        html.Div(
+view_risk_analysis = html.Div(
             [
                 dbc.Button(
-                    "✚ Add to watch list", id="add-to-watchlist-button",
-                    outline=True, className="mr-2", n_clicks=0, style={"margin-right": "15px"}
-                ),
-                html.Span(id="example-output",
-                          style={"verticalAlign": "middle"})
-            ]
+                    "View Risk Analysis", id="access-risk_analysis",href='/premium_content',
+                    outline=False, color='secondary',className="mr-2",
+                    style={'textAlign': 'center', 'margin-left': '40%', 'width': '200px', 'height': '45px', 'padding': '10px', 'margin-top': '10px',
+                           'font-size': '16px'}
+                )
+            ], style={'margin-right': '20'}
         )
-    ],
-    align="left"
-))
 
-show_entity = dbc.Row([html.H4("Entity ID",style={'margin-right':'30px'}),
-                       html.H4(id="entity-output")])
-
-show_description = html.Div(dbc.Row([dbc.Row([dbc.Col([html.H4("Brief Description"),
-                                            html.P("Didi Chuxing is a mobile transportation company headquartered in Beijing. Known simply as Didi, it is now one of the world's largest ride-hailing companies, serving more than 550 million users across Asia, Australia, and Latin America. Didi was founded in 2012.")]),
-                                      html.Img(
-                                          src='/assets/socialmedia_mockup.png', style={'width': '15%'})
-                                      ])],justify="end"))
-
-all_risks = dbc.Col(
-    [
+risk_scores = dbc.Card(
+    dbc.CardBody(
+        [
         html.H5(["Legal risks", dbc.Badge(
             "High", color="danger", className="ml-1")]),
         html.H5(["Operation risks", dbc.Badge(
             "Medium",  color="warning", className="ml-1")]),
         html.H5(["Loan risks", dbc.Badge(
             "Low",  color="success", className="ml-1")]),
-        html.H5(["Other risks", dbc.Badge("Low",  color="success", className="ml-1")])],
-    width=12,style={'textAlign':'right','height':'200px'}
+        html.H5(["Other risks", dbc.Badge("Low",  color="success", className="ml-1")]),
+        html.H5(view_risk_analysis)],
+        style={'textAlign':'right','height':'150px', 'width':'250px'}
+    )
 )
 
-key_metrics = dbc.CardGroup(
+
+show_description = dbc.Card(
+    dbc.CardBody(
+        [
+            html.H4("Nike: Company Description", className="card-title"),
+            html.P(
+                "Micron Technology, Inc., through its subsidiaries, manufactures and markets dynamic random access memory chips (DRAMs), static random access memory chips (SRAMs), flash memory, semiconductor components, and memory modules.",
+                className="card-text",
+            )
+            ,
+        ]
+    ),
+    style={"width": "40rem"},
+)
+
+social_media_card = dbc.Card(
+    dbc.CardBody(
+        [
+                    html.Img(
+                        src='/assets/socialmedia_mockup.png',
+                        className="logo"
+                        , style={'height':'30%', 'width':'30%'}
+                    ),
+        ],
+        style={"width": "20"}
+    ))
+
+company_news_card = dbc.Card(
+    dbc.CardBody(
+        [
+            html.H4("Recent News", className="card-title"),
+            # html.H4(dbc.NavLink("Is Nike really facing a sneaker shortage?.", active=True, href="https://qz.com/2035396/is-nike-really-facing-a-sneaker-shortage/"))
+            # ,
+            # html.P(
+            #     "Nike could run out of sneakers made in Vietnam as Covid crisis worsens, S&P Global warns.",
+            #     className="card-text", href='https://www.cnbc.com/2021/07/19/nike-could-run-out-of-shoes-from-vietnam-as-covid-worsens-sp-global.html'
+            # ),
+            # dbc.NavLink("Nike could run out of sneakers made in Vietnam as Covid crisis worsens, S&P Global warns.", active=True, href="https://www.cnbc.com/2021/07/19/nike-could-run-out-of-shoes-from-vietnam-as-covid-worsens-sp-global.html")
+            # ,
+            # dbc.NavLink("Nike's 'Star Wars' Sneakers Look Fantastic.", active=True, href="https://kotaku.com/nikes-star-wars-sneakers-look-fantastic-1847316695")
+            # ,
+            # # html.P(
+            # #     "Nike's 'Star Wars' Sneakers Look Fantastic.",
+            # #     className="card-text", href='https://kotaku.com/nikes-star-wars-sneakers-look-fantastic-1847316695'
+            # # )
+            # ,
+
+            dbc.Nav(
     [
-        dbc.Col([dbc.Card(
-            dbc.CardBody([
-                html.H4("Total Revenue", className="card-title"),
-                html.Div(id="revenue-output",
-                         style={'textAlign': 'center'})
-            ])
-        ),html.P(),dbc.Card(
-            dbc.CardBody([
-                html.H4("Total blabla", className="card-title"),
-                html.Div(id="revenue-output",
-                         style={'textAlign': 'center'})
-            ])
-        )], width=3),dbc.Col([dbc.Card(
-            dbc.CardBody([
-                html.H4("Total Revenue", className="card-title"),
-                html.Div(id="revenue-output",
-                         style={'textAlign': 'center'})
-            ])
-        ),html.P(),dbc.Card(
-            dbc.CardBody([
-                html.H4("Total Revenue", className="card-title"),
-                html.Div(id="revenue-output",
-                         style={'textAlign': 'center'})
-            ])
-        )], width=3),dbc.Col([dbc.Card(
-            dbc.CardBody([
-                html.H4("Total Assets", className="card-title"),
-                html.Div(id="assets-output",
-                         style={'textAlign': 'center'})
-            ])
-        ),html.P(),dbc.Card(
-            dbc.CardBody([
-                html.H4("Total Profit/Loss", className="card-title"),
-                html.Div(id="profitloss-output",
-                         style={'textAlign': 'center'})
-            ])
-        )], width=3),
-        dbc.Col(dbc.Card(all_risks),style={'height':'100%'})
+        dbc.NavItem(dbc.NavLink("Is Nike really facing a sneaker shortage?", active=True, href="https://qz.com/2035396/is-nike-really-facing-a-sneaker-shortage/")),
+        dbc.NavItem(dbc.NavLink("Nike could run out of sneakers made in Vietnam as Covid crisis worsens, S&P Global warns.", href="https://www.cnbc.com/2021/07/19/nike-could-run-out-of-shoes-from-vietnam-as-covid-worsens-sp-global.html")),
+        dbc.NavItem(dbc.NavLink("Nike's 'Star Wars' Sneakers Look Fantastic.", href="https://kotaku.com/nikes-star-wars-sneakers-look-fantastic-1847316695")),
     ],
+    vertical="md",
+)
+        ]
+    ),
+    style={"width": "40rem"},
 )
 
-download_historical = html.Div([
-            dbc.Button("Download Historical CSV", id="btn_csv", className="mr-2",
-                       color='primary', n_clicks=0),
-            dcc.Download(id="download-dataframe-csv")], style={'textAlign': 'left'})
 
-table = html.Div(id='table-stats', style={'textAlign': 'left', 'margin-left': '20%', 'width': '50px'})
-access_premium = html.Div(
+sentiment_data = dbc.Row(children=
+    [
+        dbc.Col(company_news_card, width=4,style={'margin-left': '100'}),
+        dbc.Col(social_media_card, width=4, style={'margin-left': '400'}),
+        # dbc.Col(social_media_card),
+    ]
+)
+
+
+size_grid_cards = dbc.Row(children=
+    [
+        dbc.Col(show_description, width=4,style={'margin-left': '100'}),
+        dbc.Col(risk_scores, width=4, style={'margin-right': '100'}),
+        # dbc.Col(social_media_card),
+    ]
+)
+
+
+view_forecast = html.Div(
             [
                 dbc.Button(
-                    "🔐 Access premium content", id="access-premium-button",href='/premium_content',
+                    "Checkout our forecast figures for key metric", id="view_forecast",href='/premium_content',
                     outline=False, color='secondary',className="mr-2",
                     style={'textAlign': 'center', 'margin-left': '40%', 'width': '400px', 'height': '45px', 'padding': '10px', 'margin-top': '10px',
                            'font-size': '16px'}
@@ -131,92 +143,51 @@ access_premium = html.Div(
             ]
         )
 
+
+table_header = [html.Br(),
+    html.Thead(html.Tr([html.Th("Metric"), html.Th("Value")]))
+]
+
+row1 = html.Tr([html.Td("Total Assets"), html.Td("$86.90")])
+row2 = html.Tr([html.Td("Total Liabilites"), html.Td("$21.30")])
+row3 = html.Tr([html.Td("Total Equity"), html.Td("$65.60")])
+row4 = html.Tr([html.Td("Debt to Equity (DE) Ratio"), html.Td("0.1")])
+row5 = html.Tr([html.Td("Debt Ratio"), html.Td("0.1")])
+row6 = html.Tr([html.Td("Return on Assets (ROA)"), html.Td("12%")])
+row7 = html.Tr([html.Td("Return on Equity (ROE)"), html.Td("14%")])
+row8 = html.Tr([html.Td("Net Income"), html.Td("$8.10")])
+row9 = html.Tr([html.Td("Profit Margin"), html.Td("3.2%")])
+row10 = html.Tr([html.Td("Total Number Of Employees"), html.Td("$31.00")])
+row11 = html.Tr([html.Td("Registered capital"), html.Td("300")])
+row12 = html.Tr([html.Td("Paid Up Capital"), html.Td("3")])
+
+
+table_body = [html.Tbody([row1, row2, row3, row4, row5, row6, row7, row8, row9, row10, row11, row12])]
+
+
+
 layout = dbc.Container(
     [
-        html.H1("Entity Search", style={"textAlign": "right"}),
-        html.Hr(style={
-        }),
-        dbc.Col(controls,
-                align="left",
-                # justify="center",
-                style={'margin-left': '10%'}
-                ),
+        dbc.Col([size_grid_cards],
+                        align="left",
+
+                style={'margin-left': '1'}
+        ),
+
+        # dbc.Col([view_risk_analysis]),
         html.P(),
-        show_entity, show_description,
-        key_metrics,
+
         html.P(),
-        dbc.Row([html.H4("Data last updated on ",style={'margin-right':'30px'}),
-                       html.H4(id="year-output")]),
-        download_historical,
+        html.Br(),
+        html.Br(),
+        html.Br(),
+        html.Br(),
+        dbc.Col([dbc.Table(table_header+table_body, bordered=True,size='md',
+                        # style={'margin-left':'20%','margin-top':'20px'}
+                        )
+                        ], align='left', style={'margin-left': '1'}),
+        view_forecast,          
         html.P(),
-        table,
-        dcc.Graph(id='line-plot-output',
-                  style={'width': '1000px'}),
-                  access_premium,
-                  
-        html.P()
+        sentiment_data
     ],style={'margin-left':'20%'}
 )
-
-
-@ app.callback(
-    [Output("entity-output", "children"),
-     Output("revenue-output", "children"),
-     Output("year-output", "children"),
-     Output("assets-output", "children"),
-     Output("profitloss-output", "children")],
-    Input("x-variable", "value")
-)
-def make_table(entity_id):
-    df = entity_df[(entity_df['entid'] == entity_id)
-                   & (entity_df['islatest'] == 1)]
-    df = round(df,2)
-    return [df['entid'], df['revenue'], df['year'], df['assets'],df['profit_loss']]
-
-
-@ app.callback(
-    Output("line-plot-output", "figure"),
-    Input("x-variable", "value")
-)
-def plot_line_graph(entity_id):
-    df_timeseries = entity_df[(entity_df['entid'] == entity_id)]
-    fig = px.line(df_timeseries, x="year", y="revenue", title='Revenue')
-    return fig
-
-
-@app.callback(
-    Output("example-output", "children"), [
-        Input("add-to-watchlist-button", "n_clicks"), Input("x-variable", "value")]
-)
-def on_button_click(n, entity_id):
-    if n is None:
-        return "Not clicked."
-    else:
-        add_to_watch_list = entity_df[(entity_df['entid'] == entity_id) & (
-            entity_df['islatest'] == 1)][['entid', 'profit_loss', 'revenue']]
-        watchlist_df.append(add_to_watch_list).to_csv(
-            DATA_PATH.joinpath("my_watchlist.csv"), index=False)
-        return f"✓ Added {n} entity to watch list."
-
-
-@app.callback(
-    Output("download-dataframe-csv", "data"),
-    [Input("btn_csv", "n_clicks"), Input("x-variable", "value")],
-    prevent_initial_call=True,
-)
-def func(n_clicks, entity_id):
-    if n_clicks > 0:
-        df_timeseries = entity_df[(entity_df['entid'] == entity_id)]
-        return dcc.send_data_frame(df_timeseries.to_csv, str(entity_id)+".csv")
-
-@ app.callback(
-    Output("table-stats", "children"),
-    Input("x-variable", "value")
-)
-def make_all_table(entity_id):
-    if entity_id is None:
-        raise PreventUpdate
-    else:
-        df_timeseries = entity_df[(entity_df['entid'] == entity_id)]
-        df_show = pd.pivot_table(columns='year',values=['revenue','assets'],data=df_timeseries).reset_index().rename(columns={'index':'Metrics'})
-        return dbc.Table.from_dataframe(round(df_show,2))
