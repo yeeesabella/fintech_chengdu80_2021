@@ -17,29 +17,9 @@ DATA_PATH = BASE_PATH.joinpath("data").resolve()
 
 
 features = html.Div([html.Br(),
-    dbc.Row(
-            [   dbc.Col(
-                    html.H6("Curate your watch list"),
-                    width=3,style={'height':'80px','verticalAlign':"middle","padding-bottom":"2"}
-                ),
-                dbc.Col(
-                    html.H4("✔️"),
-                    width=3,
-                ),
-                dbc.Col(
-                    html.H4("✔️"),
-                    width=3,
-                ),
-                dbc.Col(
-                    html.H4("✔️"),
-                    width=3,
-                ),
-            ],
-            justify="end",style={'textAlign':'center','margin-right':'10px'}
-        ),
         dbc.Row(
             [   dbc.Col(
-                    html.H6("Receive timely alerts on risk changes"),
+                    html.H6("Receive timely and customisable alerts on risk changes and news"),
                     width=3,style={'height':'80px','verticalAlign':"middle","padding-bottom":"2"}
                 ),
                 dbc.Col(
@@ -77,30 +57,11 @@ features = html.Div([html.Br(),
             justify="end",style={'textAlign':'center','margin-right':'10px'}
         ),dbc.Row(
             [dbc.Col(
-                    html.H6("Insights into risk scores"),
+                    html.H6("Insights into risk scores with interpretable charts"),
                     width=3,style={'height':'80px','verticalAlign':"middle","padding-bottom":"2"}
                 ),
                 dbc.Col(
-                    html.H4("𝗫"),
-                    width=3,
-                ),
-                dbc.Col(
                     html.H4("✔️"),
-                    width=3,
-                ),
-                dbc.Col(
-                    html.H4("✔️"),
-                    width=3,
-                ),
-            ],
-            justify="end",style={'textAlign':'center','margin-right':'10px'}
-        ),dbc.Row(
-            [dbc.Col(
-                    html.H6("Visualised charts for ease of interpretability"),
-                    width=3,style={'height':'80px','verticalAlign':"middle","padding-bottom":"2"}
-                ),
-                dbc.Col(
-                    html.H4("𝗫"),
                     width=3,
                 ),
                 dbc.Col(
@@ -119,7 +80,7 @@ features = html.Div([html.Br(),
                     width=3,style={'height':'80px','verticalAlign':"middle","padding-bottom":"2"}
                 ),
                 dbc.Col(
-                    html.H4("𝗫"),
+                    html.H4("✔️"),
                     width=3,
                 ),
                 dbc.Col(
@@ -138,34 +99,53 @@ features = html.Div([html.Br(),
                     width=3,style={'height':'80px','verticalAlign':"middle","padding-bottom":"2"}
                 ),
                 dbc.Col(
-                    html.H4("Up to 1 user"),
+                    html.H6("Up to 1 user"),
                     width=3,
                 ),
                 dbc.Col(
-                    html.H4("Min 10 users"),
+                    html.H6("Min 10 users"),
                     width=3,
                 ),
                 dbc.Col(
-                    html.H4("Min 10 users"),
+                    html.H6("Min 10 users"),
                     width=3,
                 ),
             ],
             justify="end",style={'textAlign':'center','margin-right':'10px'}
         ),dbc.Row(
             [dbc.Col(
-                    html.H6("Price per month (USD)"),
+                    html.H6("Early warning for business users on potential vulnerabilities"),
                     width=3,style={'height':'80px','verticalAlign':"middle","padding-bottom":"2"}
                 ),
                 dbc.Col(
-                    html.H4("$5.99"),
+                    html.H4("𝗫"),
                     width=3,
                 ),
                 dbc.Col(
-                    html.H4("$59.99"),
+                    html.H4("✔️"),
                     width=3,
                 ),
                 dbc.Col(
-                    html.H4("Contact us! ☎️"),
+                    html.H4("✔️"),
+                    width=3,
+                ),
+            ],
+            justify="end",style={'textAlign':'center','margin-right':'10px'}
+        ),dbc.Row(
+            [dbc.Col(
+                    html.H6("Ability to monetise your personal business data"),
+                    width=3,style={'height':'80px','verticalAlign':"middle","padding-bottom":"2"}
+                ),
+                dbc.Col(
+                    html.H4("𝗫"),
+                    width=3,
+                ),
+                dbc.Col(
+                    html.H4("✔️"),
+                    width=3,
+                ),
+                dbc.Col(
+                    html.H4("✔️"),
                     width=3,
                 ),
             ],
@@ -182,7 +162,7 @@ plans = dbc.Row(
                     "The basics for the everyday investors.",
                     className="card-text",
                 ),
-                dbc.Button("Sign up free 🎉",
+                dbc.Button("Sign up for 14 days trial 🎉",
                     type='submit', href="/signup",color="primary"),
                 html.P(),
                 html.P(
@@ -199,7 +179,7 @@ plans = dbc.Row(
             dbc.CardBody([
                 html.H4("Business Plan", className="card-title"),
                 html.P(
-                    "All your financial due diligence you need.",
+                    "Financial due diligence for businesses.",
                     className="card-text",
                 ),
                 dbc.Button("Request a free trial", color="primary"),
@@ -239,7 +219,7 @@ plans = dbc.Row(
 
 layout = html.Div(
     [html.Br(),html.H1(
-                        "Pricing", style={'textAlign': 'right'}
+                        "Pricing", style={'textAlign': 'center'}
                     ),
                     html.Br(),
         plans,features
