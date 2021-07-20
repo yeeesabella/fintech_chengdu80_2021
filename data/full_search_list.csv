@@ -1,0 +1,16 @@
+﻿Company Name,Entity,Year,is_latest,is_predicted,Main Risk,Industry code,Industry,Region Type,Province,Enterprise code,Enterprise Type,Total Assets,Total Liabilites,Total Equity,Debt to Equity (DE) Ratio ,Debt Ratio,Return on Assets (ROA),Return on Equity (ROE),Net Income,Profit Margin,Total Number Of Employees,Registered capital,Paid Up Capital
+Nike,2608434,2014,0,0,Legal Risk,2294,Retail ,415,Anhui,5,Public Listed Company, $6.0 , $12.3 ,-$3.4 ,-3.6,2.1,-117%,204%,-$7.0 ,0.0%,26,300,3
+Nike,2608434,2015,0,0,Legal Risk,2295,Retail,415,Anhui,5,Public Listed Company, $63.4 , $14.9 , $49.5 ,0.3,0.2,78%,100%, $49.7 ,1.0%,20,300,3
+Nike,2608434,2016,0,0,Legal Risk,2296,Retail,415,Anhui,5,Public Listed Company, $103.0 , $41.0 , $61.0 ,0.7,0.4,11%,19%, $11.6 ,2.1%,24,300,3
+Nike,2608434,2017,0,0,Legal Risk,2297,Retail,415,Anhui,5,Public Listed Company, $74.5 , $12.3 , $62.6 ,0.2,0.2,3%,4%, $2.4 ,2.2%,32,300,3
+Nike,2608434,2018,1,0,Legal Risk,2298,Retail,415,Anhui,5,Public Listed Company, $83.0 , $10.6 , $73.1 ,0.1,0.1,12%,14%, $10.2 ,5.2%,37,300,3
+Nike,2608435,2019,0,1,Legal Risk,2299,Retail,415,Anhui,5,Public Listed Company, $86.9 , $21.3 , $65.6 ,0.1,0.1,12%,14%, $8.1 ,3.2%, $31.0 ,300,3
+China Mobile,,2018,1,0,Operation Risk,,Telecommunications,2259,Hainan,,State Owned Enterprise,,,,,,,,,,,,
+Beijing Travel Service,,2018,1,0,Legal Risk,,Tourism,2261,Beijing,,Private Enterprise,,,,,,,,,,,,
+COFCO China,,2018,1,0,Operation Risk,,Agriculture,2359,Hebei,,Individually Owned Enterprise,,,,,,,,,,,,
+YueHwa,,2018,1,0,Operation Risk,,Retail,2364,Gansu,,Limited Reliabilty Company,,,,,,,,,,,,
+Chanjing Electronics,,2018,1,0,Loans Risk,,Semiconductors,2398,Guizhou,,Individually Owned Enterprise,,,,,,,,,,,,
+Jixing Lending Agency,,2018,1,0,Others,,Financial Services,2391,Guangxi,,Private Enterprise,,,,,,,,,,,,
+Chuan Zhengye,,2018,1,0,Operation Risk,,Agriculture,2409,Fujian,,Individually Owned Enterprise,,,,,,,,,,,,
+DCHealth,,2018,1,0,Others,,Health Services,2365,Guangdong,,Limited Reliabilty Company,,,,,,,,,,,,
+China Merchants Group,,2018,1,0,Operation Risk,,Transport,2359,Hebei,,Limited Reliabilty Company,,,,,,,,,,,,
