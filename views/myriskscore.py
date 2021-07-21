@@ -24,7 +24,6 @@ import plotly.express as px
 BASE_PATH = pathlib.Path(__file__).resolve().parents[1]
 DATA_PATH = BASE_PATH.joinpath("data").resolve()
 entity_df = pd.read_csv(DATA_PATH.joinpath("huawei_data.csv"))
-watchlist_df = pd.read_csv(DATA_PATH.joinpath("my_watchlist.csv"))
 
 variables = ['Total Assets',
 'Total Liabilities',
@@ -48,23 +47,6 @@ timeseries_controls = dbc.Container(dbc.Row(
             value='Total Assets', style={"width": "20rem", "margin-right": "20px"}
         )]))
 
-scatter_controls = dbc.Container(dbc.Row(
-    [
-        dbc.Label("X-axis", style={"margin-right": "20px","verticalAlign":'middle'}),
-        dcc.Dropdown(
-            id="x11",
-            options=[{"label": col, "value": col} for col in variables],
-            value='Total Assets', style={"width": "20rem", "margin-right": "20px"}
-        ),
-        dbc.Label("Y-axis", style={"margin-right": "20px","verticalAlign":'middle'}),
-        dcc.Dropdown(
-            id="x21",
-            options=[{"label": col, "value": col} for col in variables],
-            value='Total Liabilities', style={"width": "20rem", "margin-right": "20px"}
-        ),
-        ]))
-
-
 card_tabs=dbc.Card(
     [
         dbc.CardHeader(
@@ -84,6 +66,7 @@ card_tabs=dbc.Card(
     ], style={"margin-left": "100px", "width": '1200px'}
 )
 
+
 risk_scores = dbc.Card(
     dbc.CardBody(
         [
@@ -102,7 +85,7 @@ risk_scores = dbc.Card(
 )
 
 @ app.callback(
-    Output("card-content2", "children"), [Input("card-tabs2", "active_tab")]
+    Output("card-content1", "children"), [Input("card-tabs1", "active_tab")]
 )
 def tab_content(active_tab):
     if active_tab == 'tab-1':
@@ -111,19 +94,20 @@ def tab_content(active_tab):
             timeseries_controls,
             dcc.Graph(id='time-series-plot-output1',
                   style={'width': '1000px'}),
-            html.H4("Relationship between Variables"),
-            scatter_controls,
-            dcc.Graph(id='scatter-plot-output1',
-                  style={'width': '1000px'})
+            html.H4("Revenue - by Business Unit"),
+            html.Img(src='/assets/biz prop.png', height="300px"),
+            html.Br(),
+            html.Br(),
+            dbc.Row([dbc.Col([html.H4("Revenue - by Geography"),
+            html.Img(src='/assets/region prop.png', height="300px")]),
+            dbc.Col([html.H4("Risk Scores - by Geography"),
+            html.Img(src='/assets/risk-rating.png', height="300px")])]),
         ])
     elif active_tab == 'tab-2':
         return dbc.Container([html.H3("Insights into FinNUS Risk Scores"),
-                                html.P("The company is exposed to various external factors that have contributed to its operational, legal and macro risk. The primary factors that contribute to its xx risk are shown below. The explainability results are result of our proprietory algorithm which is based blockchain-protected data."),
+                                html.P("The company is exposed to various external factors that have contributed to its operational, legal and macro risk. The primary factors that contribute to its loan risk are shown below. The explainability results are result of our proprietory algorithm which is based blockchain-protected data."),
                                 html.H3(
                                     "Factors influencing the risk classification"),
-                                # html.H4("Global SHAP Plot"),
-                                # html.P(""),
-                                # html.Img(src='/assets/global_shap.png', height="500px"),
                                 html.P(),
                                 html.H4("Local SHAP Plot"),
                                 html.P("The output value (f(x)) is the classification class for the observation."),
@@ -141,38 +125,28 @@ def tab_content(active_tab):
                                 ])
     elif active_tab == 'tab-3':
         return dbc.Container([
-            html.H4("Risks Transmission"),
-            html.Img(src='/assets/ownership-nike.png', height="330px"),
+            html.H4("Ownership Structure"),
+            html.Img(src='/assets/ownership_huawei.png', height="330px"),
+            html.H4("Risks Network"),
+            html.Img(src='/assets/huawei_network.png', height="500px"),
         ])
     elif active_tab == 'tab-4':
         return dbc.Container([
             html.H4("Comparison with Other Risk Providers"),
-            html.Img(src='/assets/benchmark_type_2.png', height="500px")
+            html.Img(src='/assets/benchmark_type_1.png', height="500px")
         ])
     else:
         return "This is tab {}".format(active_tab)
 
-
 @ app.callback(
-    Output("time-series-plot-output2", "figure"),
-    Input("variable-of-interest2", "value")
+    Output("time-series-plot-output1", "figure"),
+    Input("variable-of-interest1", "value")
 )
 def plot_line_graph(variable_name):
     df_timeseries = entity_df[(entity_df['Entity ID'] == '722691858')]
     fig = px.bar(df_timeseries, x="Year", y=variable_name,color="is_predicted",title=f'Historical {variable_name}')
     return fig
 
-
-@ app.callback(
-    Output("scatter-plot-output1", "figure"),
-    [Input("x11", "value"),Input("x21", "value")]
-    )
-
-def plot_scatter_graph(variable_1,variable_2):
-    df_timeseries = entity_df[(entity_df['Entity ID'] == '722691858')]
-    fig = px.scatter(df_timeseries, x=variable_1, y=variable_2,title=f'Scatter Matrix between {variable_1} and {variable_2}')
-    fig.update(layout_showlegend=False)
-    return fig
 
 layout=dbc.Container(
                         [html.H2("FinNUS+", style={"margin-left": "100%"}),

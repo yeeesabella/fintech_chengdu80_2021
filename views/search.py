@@ -19,13 +19,6 @@ import plotly.express as px
 import pathlib
 from dash.exceptions import PreventUpdate
 
-
-BASE_PATH = pathlib.Path(__file__).resolve().parents[1]
-DATA_PATH = BASE_PATH.joinpath("data").resolve()
-watchlist_df = pd.read_csv(DATA_PATH.joinpath("my_watchlist.csv"))
-df_metrics = pd.read_csv(DATA_PATH.joinpath("key_metrics.csv"))
-
-
 show_description = dbc.Card(
     dbc.CardBody(
         [
@@ -94,10 +87,10 @@ show_social = dbc.Card(
     ], href="https://s.weibo.com/weibo/%25E5%258D%258E%25E4%25B8%25BA?topnav=1&wvr=6&b=1"),
     html.A([
             html.Img(
-                src='/assets/zhihulogo.jpeg',
+                src='/assets/zhihulogo.png',
                 style={
-                    'height': '35%',
-                    'width': '35%',
+                    'height': '30%',
+                    'width': '30%', 'margin-left':'20px'
                 })
     ], href="https://www.zhihu.com/search?type=content&q=huawei")
     ],

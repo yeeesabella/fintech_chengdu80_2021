@@ -30,20 +30,6 @@ export_contract = html.Div(
             ],style={'textAlign': 'left','margin-left':'20%'}
         )
 
-
-# df = pd.DataFrame(
-#     [
-#         ["Hash (SHA256)", 'FC78B890F9 1DD8E92C40 2A45FA57E8 9DF7E2677011 78542DCC570 B90FFA0FBE5'],
-#         ["Smart Contract Date", '20-July-2021'],
-#         ["Contract Details", 'The payment to be made on authentication of data'],
-#         ["Company for which data is provided", 'Chengdu Inc.'],
-#         ["Data Provider", 'Data Inc.'],
-#         ["Contract Cost", 'ETH 2000']
-#     ],
-#     columns=["Smart Contract Field", "Content"],
-# )
-
-
 layout = html.Div([html.P(),
     dbc.Table(table_header+table_body, bordered=True,size='md',
                         style={'margin-left':'20%','margin-top':'20px','width':'800px'}),
@@ -54,16 +40,6 @@ layout = html.Div([html.P(),
                    style={'textAlign': 'center', 'width': '800px', 'margin-left':'20%','margin-top': '10px', 'font-size': '16px'}),
                 ]
                 )
-
-# @app.callback(
-#     Output("export-button", "data"),
-#     [Input("export-csv", "n_clicks")],
-#     prevent_initial_call=True,
-# )
-# def func(n_clicks):
-#     if n_clicks > 0:
-#         return dcc.send_data_frame(df.to_csv, "smart-contract.csv")
-
 
 @app.callback(
     Output("sync-output", "children"), [

@@ -1,3 +1,2 @@
 [database]
-con = postgresql+psycopg2://
-postgres:password@localhost/chengdu-test
+con = postgresql+psycopg2://chengdu_nus:fintech_nus_2021@ec2-3-0-133-209.ap-southeast-1.compute.amazonaws.com/postgres

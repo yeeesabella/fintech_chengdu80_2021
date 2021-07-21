@@ -18,8 +18,6 @@ import pathlib
 
 BASE_PATH = pathlib.Path(__file__).resolve().parents[1]
 DATA_PATH = BASE_PATH.joinpath("data").resolve()
-# watchlist_df = pd.read_csv(DATA_PATH.joinpath("my_watchlist.csv"))
-# watchlist_df.drop_duplicates(inplace=True)
 
 company_news = dbc.FormGroup(
     [

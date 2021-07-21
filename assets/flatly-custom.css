@@ -3484,7 +3484,7 @@ input[type="button"].btn-block {
   margin-left: 0;
   line-height: 1.25;
   color: #fff;
-  background-color: #18BC9C;
+  background-color: black;
   border: 0 solid transparent; }
   .page-link:hover {
     z-index: 2;

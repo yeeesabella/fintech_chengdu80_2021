@@ -21,11 +21,9 @@ import plotly.express as px
 # import dash_cytoscape as cyto
 
 
-
 BASE_PATH = pathlib.Path(__file__).resolve().parents[1]
 DATA_PATH = BASE_PATH.joinpath("data").resolve()
 entity_df = pd.read_csv(DATA_PATH.joinpath("huawei_data.csv"))
-watchlist_df = pd.read_csv(DATA_PATH.joinpath("my_watchlist.csv"))
 
 variables = ['Total Assets',
 'Total Liabilities',
@@ -48,23 +46,6 @@ timeseries_controls = dbc.Container(dbc.Row(
             options=[{"label": col, "value": col} for col in variables],
             value='Total Assets', style={"width": "20rem", "margin-right": "20px"}
         )]))
-
-scatter_controls = dbc.Container(dbc.Row(
-    [
-        dbc.Label("X-axis", style={"margin-right": "20px","verticalAlign":'middle'}),
-        dcc.Dropdown(
-            id="x1",
-            options=[{"label": col, "value": col} for col in variables],
-            value='Total Assets', style={"width": "20rem", "margin-right": "20px"}
-        ),
-        dbc.Label("Y-axis", style={"margin-right": "20px","verticalAlign":'middle'}),
-        dcc.Dropdown(
-            id="x2",
-            options=[{"label": col, "value": col} for col in variables],
-            value='Total Liabilities', style={"width": "20rem", "margin-right": "20px"}
-        ),
-        ]))
-
 
 card_tabs=dbc.Card(
     [
@@ -102,17 +83,14 @@ def tab_content(active_tab):
             html.Br(),
             dbc.Row([dbc.Col([html.H4("Revenue - by Geography"),
             html.Img(src='/assets/region prop.png', height="300px")]),
-            dbc.Col([html.H4("Revenue - by Geography"),
-            html.Img(src='/assets/region prop.png', height="300px")])]),
+            dbc.Col([html.H4("Risk Scores - by Geography"),
+            html.Img(src='/assets/risk-rating.png', height="300px")])]),
         ])
     elif active_tab == 'tab-2':
         return dbc.Container([html.H3("Insights into FinNUS Risk Scores"),
-                                html.P("The company is exposed to various external factors that have contributed to its operational, legal and macro risk. The primary factors that contribute to its xx risk are shown below. The explainability results are result of our proprietory algorithm which is based blockchain-protected data."),
+                                html.P("The company is exposed to various external factors that have contributed to its operational, legal and macro risk. The primary factors that contribute to its loan risk are shown below. The explainability results are result of our proprietory algorithm which is based blockchain-protected data."),
                                 html.H3(
                                     "Factors influencing the risk classification"),
-                                # html.H4("Global SHAP Plot"),
-                                # html.P(""),
-                                # html.Img(src='/assets/global_shap.png', height="500px"),
                                 html.P(),
                                 html.H4("Local SHAP Plot"),
                                 html.P("The output value (f(x)) is the classification class for the observation."),
@@ -132,13 +110,14 @@ def tab_content(active_tab):
         return dbc.Container([
             html.H4("Ownership Structure"),
             html.Img(src='/assets/ownership_huawei.png', height="330px"),
-            html.H4("Risks Transmission"),
+            html.P(),
+            html.H4("Risks Network"),
             html.Img(src='/assets/huawei_network.png', height="500px"),
         ])
     elif active_tab == 'tab-4':
         return dbc.Container([
             html.H4("Comparison with Other Risk Providers"),
-            html.Img(src='/assets/benchmark_type_1.png', height="800px")
+            html.Img(src='/assets/benchmark_type_1.png', height="500px")
         ])
     else:
         return "This is tab {}".format(active_tab)
@@ -152,22 +131,6 @@ def plot_line_graph(variable_name):
     fig = px.bar(df_timeseries, x="Year", y=variable_name,color="is_predicted",title=f'Historical {variable_name}')
     return fig
 
-
-@ app.callback(
-    Output("scatter-plot-output", "figure"),
-    [Input("x1", "value"),Input("x2", "value")]
-    )
-
-def plot_scatter_graph(variable_1,variable_2):
-    df_timeseries = entity_df[(entity_df['Entity ID'] == '722691858')]
-    for i in range(len(df_timeseries)):
-        if df_timeseries.loc[i, variable_1]==0:
-            df_timeseries.loc[i, 'ratio'] = 0
-        else:
-            df_timeseries.loc[i, 'ratio'] = (df_timeseries.loc[i, variable_2]/df_timeseries.loc[i, variable_1])
-    fig = px.line(df_timeseries, x="Year", y='ratio',title=f'Ratio Analysis {variable_2} and {variable_1}')
-    fig.update(layout_showlegend=False)
-    return fig
 
 layout=dbc.Container(
                         [html.H2("FinNUS+", style={"margin-left": "100%"}),

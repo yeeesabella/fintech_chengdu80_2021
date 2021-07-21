@@ -10,22 +10,11 @@ import dash
 
 from app import app, server
 from flask_login import logout_user, current_user
-from views import login, error, search, blockchain, profile, user_admin, aboutus, pricing, alerts, data_provider, contribute_data, signup, premium_content, payment,fullsearch
+from views import login, error, search, blockchain, profile, user_admin, aboutus, pricing, alerts, contribute_data, signup, premium_content, payment,fullsearch,myriskscore
 
 ###############################################################################
 ########### LANDING PAGE LAYOUT ###########
 ###############################################################################
-# styling the sidebar
-# SIDEBAR_STYLE = {
-#     "position": "fixed",
-#     "top": 70,
-#     "left": 0,
-#     "bottom": 0,
-#     "width": "16rem",
-#     "padding": "2rem 1rem",
-#     'background-color':'blue'
-# }
-
 
 sideBar = dbc.Nav(id='sideBar',
                  children=[],
@@ -141,6 +130,8 @@ def displayPage(pathname):
     if pathname == '/login':
         return login.layout
 
+    if pathname == '/myriskscore':
+        return myriskscore.layout
     else:
         return error.layout
 
@@ -291,4 +282,4 @@ def sideBar(input1):
         return ''
 
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app.run_server(host='0.0.0.0',port='8888')

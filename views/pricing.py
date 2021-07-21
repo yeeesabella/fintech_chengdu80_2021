@@ -11,10 +11,6 @@ import plotly.graph_objs as go
 from dash.dependencies import Input, Output
 import pathlib
 
-# Path
-BASE_PATH = pathlib.Path(__file__).parent.resolve()
-DATA_PATH = BASE_PATH.joinpath("data").resolve()
-
 
 features = html.Div([html.Br(),
         dbc.Row(
@@ -38,7 +34,7 @@ features = html.Div([html.Br(),
             justify="end",style={'textAlign':'center','margin-right':'10px'}
         ),dbc.Row(
             [dbc.Col(
-                    html.H6("Downloadable historical data as csv"),
+                    html.H6("Access to historical data"),
                     width=3,style={'height':'80px','verticalAlign':"middle","padding-bottom":"2"}
                 ),
                 dbc.Col(

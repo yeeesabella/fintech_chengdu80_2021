@@ -13,11 +13,6 @@ import pathlib
 import time
 
 
-# Path
-BASE_PATH = pathlib.Path(__file__).parent.resolve()
-DATA_PATH = BASE_PATH.joinpath("data").resolve()
-
-
 cc_details = dbc.Row(
     [
         dbc.Col(dbc.Card(

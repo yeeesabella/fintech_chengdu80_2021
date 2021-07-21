@@ -63,6 +63,5 @@ layout = dbc.Container([
         ]
         )
     ]
-        # , className='jumbotron'
     )
 ])
