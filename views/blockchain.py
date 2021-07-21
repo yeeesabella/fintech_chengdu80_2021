@@ -23,7 +23,7 @@ table_body = [html.Tbody([row1, row2, row3, row4, row5, row6])]
 export_contract = html.Div(
             [
                 dbc.Button(
-                    "Sync to Ethereum", id="sync-ethereum",color="primary", className="mr-2", n_clicks=0
+                    "Deploy to Ethereum", id="sync-ethereum",color="primary", className="mr-2", n_clicks=0
                 ),
                 html.Span(id="sync-output",
                           style={"verticalAlign": "middle"})
@@ -44,9 +44,16 @@ export_contract = html.Div(
 # )
 
 
-layout = html.Div([dbc.Table(table_header+table_body, bordered=True,size='md',
-                        style={'margin-left':'20%','margin-top':'20px'}),
-                export_contract])
+layout = html.Div([html.P(),
+    dbc.Table(table_header+table_body, bordered=True,size='md',
+                        style={'margin-left':'20%','margin-top':'20px','width':'800px'}),
+                export_contract,
+                html.P(),
+                dbc.Button("View your business risk scores", id="view_risk_scores", href='/myriskscore',
+                   outline=True, color='primary', className="mr-2",
+                   style={'textAlign': 'center', 'width': '800px', 'margin-left':'20%','margin-top': '10px', 'font-size': '16px'}),
+                ]
+                )
 
 # @app.callback(
 #     Output("export-button", "data"),
@@ -66,4 +73,4 @@ def on_button_click(n):
     if n==0:
         return " "
     else:
-        return f"✓ Synced!"
+        return f"✓ Deployed!"
