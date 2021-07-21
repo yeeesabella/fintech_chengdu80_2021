@@ -18,6 +18,8 @@ import json
 import pathlib
 from views import search
 import plotly.express as px
+# import dash_cytoscape as cyto
+
 
 
 BASE_PATH = pathlib.Path(__file__).resolve().parents[1]
@@ -94,10 +96,14 @@ def tab_content(active_tab):
             timeseries_controls,
             dcc.Graph(id='time-series-plot-output',
                   style={'width': '1000px'}),
-            html.H4("Relationship between Variables"),
-            scatter_controls,
-            dcc.Graph(id='scatter-plot-output',
-                  style={'width': '1000px'})
+            html.H4("Revenue - by Business Unit"),
+            html.Img(src='/assets/biz prop.png', height="300px"),
+            html.Br(),
+            html.Br(),
+            dbc.Row([dbc.Col([html.H4("Revenue - by Geography"),
+            html.Img(src='/assets/region prop.png', height="300px")]),
+            dbc.Col([html.H4("Revenue - by Geography"),
+            html.Img(src='/assets/region prop.png', height="300px")])]),
         ])
     elif active_tab == 'tab-2':
         return dbc.Container([html.H3("Insights into FinNUS Risk Scores"),
@@ -124,17 +130,18 @@ def tab_content(active_tab):
                                 ])
     elif active_tab == 'tab-3':
         return dbc.Container([
+            html.H4("Ownership Structure"),
+            html.Img(src='/assets/ownership_huawei.png', height="330px"),
             html.H4("Risks Transmission"),
-            html.Img(src='/assets/ownership-nike.png', height="330px"),
+            html.Img(src='/assets/huawei_network.png', height="500px"),
         ])
     elif active_tab == 'tab-4':
         return dbc.Container([
             html.H4("Comparison with Other Risk Providers"),
-            html.Img(src='/assets/benchmark_type_2.png', height="500px")
+            html.Img(src='/assets/benchmark_type_1.png', height="800px")
         ])
     else:
         return "This is tab {}".format(active_tab)
-
 
 @ app.callback(
     Output("time-series-plot-output", "figure"),
@@ -153,7 +160,12 @@ def plot_line_graph(variable_name):
 
 def plot_scatter_graph(variable_1,variable_2):
     df_timeseries = entity_df[(entity_df['Entity ID'] == '722691858')]
-    fig = px.scatter(df_timeseries, x=variable_1, y=variable_2,title=f'Scatter Matrix between {variable_1} and {variable_2}')
+    for i in range(len(df_timeseries)):
+        if df_timeseries.loc[i, variable_1]==0:
+            df_timeseries.loc[i, 'ratio'] = 0
+        else:
+            df_timeseries.loc[i, 'ratio'] = (df_timeseries.loc[i, variable_2]/df_timeseries.loc[i, variable_1])
+    fig = px.line(df_timeseries, x="Year", y='ratio',title=f'Ratio Analysis {variable_2} and {variable_1}')
     fig.update(layout_showlegend=False)
     return fig
 
