@@ -161,7 +161,7 @@ inputs = html.Div(
 )
 
 
-def make_item(entity_id):
+def make_item(entity_id,risk_level,colour):
     # one_entity = watchlist_df[watchlist_df['Entity']==entity_id]
     # one_entity = one_entity.transpose().reset_index().rename(columns={'index':'Key Metrics'}).iloc[1:]
     # new_header = one_entity.iloc[0]
@@ -172,12 +172,16 @@ def make_item(entity_id):
         [
             dbc.CardHeader(
                 html.H2(
+                    [
+                    
                     dbc.Button(
                         f"Entity ID #{entity_id}",
-                        color="link",style={'fontSize':'20px'},
+                        color="link",style={'fontSize':'20px','margin-top':'0%'},
                         id=f"group-{entity_id}-toggle",
                         n_clicks=0,
-                    )
+                    ),dbc.Row([html.P("Overall Risk Level",style={'margin-left':'25px','font-size':'15px','margin-right':'10px'}),
+                    dbc.Badge(risk_level, color=colour,pill=False,style={'height':'20px','font-size':'15px'})]),
+                    ]
                 )
             ),
             dbc.Collapse(
@@ -193,7 +197,7 @@ def make_item(entity_id):
 
 
 accordion = html.Div(
-    [make_item(722691858), make_item(36393553), make_item(43814551)], className="accordion"
+    [make_item(722691858,'High','danger'), make_item(36393553,'Low','success'), make_item(43814551,'Medium','warning')], className="accordion"
 )
 
 

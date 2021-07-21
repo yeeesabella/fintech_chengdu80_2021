@@ -49,8 +49,7 @@ risk_scores = dbc.Card(
                 "Low",  color="success", className="ml-1")]),
             html.H5(["Other risks", dbc.Badge(
                 "Low",  color="success", className="ml-1")]),
-            dbc.Badge("✓ Based on data secured on distributed ledger", color='light')],
-        # html.H5(view_risk_analysis)],
+            dbc.Badge("✓ Verified data secured on distributed ledger", color='light')],
         style={'textAlign': 'right'}
     )
 )
