@@ -16,20 +16,20 @@ from views import login, error, search, blockchain, profile, user_admin, aboutus
 ########### LANDING PAGE LAYOUT ###########
 ###############################################################################
 # styling the sidebar
-SIDEBAR_STYLE = {
-    "position": "fixed",
-    "top": 70,
-    "left": 0,
-    "bottom": 0,
-    "width": "16rem",
-    "padding": "2rem 1rem",
-    'background-color':'white'
-}
+# SIDEBAR_STYLE = {
+#     "position": "fixed",
+#     "top": 70,
+#     "left": 0,
+#     "bottom": 0,
+#     "width": "16rem",
+#     "padding": "2rem 1rem",
+#     'background-color':'blue'
+# }
 
 
 sideBar = dbc.Nav(id='sideBar',
                  children=[],
-                 style=SIDEBAR_STYLE,
+                #  style=SIDEBAR_STYLE,
                  pills=True
                  )
 
@@ -138,6 +138,9 @@ def displayPage(pathname):
     if pathname == '/fullsearch':
         return fullsearch.layout
 
+    if pathname == '/login':
+        return login.layout
+
     else:
         return error.layout
 
@@ -151,6 +154,15 @@ def displayPage(pathname):
 def sideBar(input1):
     if current_user.is_authenticated:
         if current_user.admin == 0: # real admin
+            SIDEBAR_STYLE = {
+    "position": "fixed",
+    "top": 70,
+    "left": 0,
+    "bottom": 0,
+    "width": "16rem",
+    "padding": "2rem 1rem",
+    'background-color':'#DCE6F2'
+}
             navBarContents = html.Div(
                 [   
                     html.P(
@@ -188,6 +200,15 @@ def sideBar(input1):
             return navBarContents
 
         elif current_user.admin == 1: # corporate
+            SIDEBAR_STYLE = {
+    "position": "fixed",
+    "top": 70,
+    "left": 0,
+    "bottom": 0,
+    "width": "16rem",
+    "padding": "2rem 1rem",
+    'background-color':'#DCE6F2'
+}
             navBarContents = html.Div(
                 [   
                     html.P(
@@ -221,6 +242,16 @@ def sideBar(input1):
             return navBarContents
 
         elif current_user.admin == 2: # individual
+            SIDEBAR_STYLE = {
+    "position": "fixed",
+    "top": 70,
+    "left": 0,
+    "bottom": 0,
+    "width": "16rem",
+    "padding": "2rem 1rem",
+    'background-color':'#DCE6F2'
+}
+            
             navBarContents = html.Div(
                 [   
                     html.P(
@@ -255,6 +286,9 @@ def sideBar(input1):
             return navBarContents
         else:
             return ''
+
+    else:
+        return ''
 
 if __name__ == '__main__':
     app.run_server(debug=True)
