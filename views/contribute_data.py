@@ -17,7 +17,7 @@ import dash_table
 
 layout = html.Div([
         html.Br(),
-        html.H1("Evaluate your business risks", style={"textAlign": "right",'margin-right':'10%'}),
+        html.H1("Assess your business risks", style={"textAlign": "right",'margin-right':'10%'}),
         html.Hr(style={'width':'1000px'}),
         dbc.FormGroup(
             [
