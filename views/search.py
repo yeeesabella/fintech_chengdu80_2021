@@ -76,14 +76,32 @@ company_news_card = dbc.Card(
 
 show_social = dbc.Card(
     dbc.CardBody(
-        [html.H4("Social", className="card-title"), html.A([
+        [html.H4("Social", className="card-title"), 
+        html.A([
             html.Img(
                 src='/assets/twitter.jpeg',
                 style={
-                    'height': '50%',
-                    'width': '50%',
+                    'height': '35%',
+                    'width': '35%',
                 })
-    ], href='https://twitter.com/search?q=huawei&src=typed_query')],
+    ], href='https://twitter.com/search?q=huawei&src=typed_query'), 
+    html.A([
+            html.Img(
+                src='/assets/weibologo.png',
+                style={
+                    'height': '25%',
+                    'width': '25%',
+                })
+    ], href="https://s.weibo.com/weibo/%25E5%258D%258E%25E4%25B8%25BA?topnav=1&wvr=6&b=1"),
+    html.A([
+            html.Img(
+                src='/assets/zhihulogo.jpeg',
+                style={
+                    'height': '35%',
+                    'width': '35%',
+                })
+    ], href="https://www.zhihu.com/search?type=content&q=huawei")
+    ],
         style={'textAlign': 'left'}
     ),style={'width':'300px','margin-left': '10px'}
 )
@@ -101,21 +119,21 @@ view_forecast = html.Div(
 
 
 table_header = [html.Br(),
-    html.Thead(html.Tr([html.Th("Metric"), html.Th("Value")]))
+    html.Thead(html.Tr([html.Th("Topline Metrics"), html.Th("")]))
 ]
 
-row1 = html.Tr([html.Td("Total Assets"), html.Td("$86.90")])
-row2 = html.Tr([html.Td("Total Liabilites"), html.Td("$21.30")])
-row3 = html.Tr([html.Td("Total Equity"), html.Td("$65.60")])
+row1 = html.Tr([html.Td("Total Assets ($ M)"), html.Td("86.9")])
+row2 = html.Tr([html.Td("Total Liabilities ($ M)"), html.Td("21.3")])
+row3 = html.Tr([html.Td("Total Equity ($ M)"), html.Td("65.6")])
 row4 = html.Tr([html.Td("Debt to Equity (DE) Ratio"), html.Td("0.1")])
 row5 = html.Tr([html.Td("Debt Ratio"), html.Td("0.1")])
 row6 = html.Tr([html.Td("Return on Assets (ROA)"), html.Td("12%")])
 row7 = html.Tr([html.Td("Return on Equity (ROE)"), html.Td("14%")])
-row8 = html.Tr([html.Td("Net Income"), html.Td("$8.10")])
+row8 = html.Tr([html.Td("Net Income ($ M)"), html.Td("$8.10")])
 row9 = html.Tr([html.Td("Profit Margin"), html.Td("3.2%")])
-row10 = html.Tr([html.Td("Total Number Of Employees"), html.Td("$31.00")])
-row11 = html.Tr([html.Td("Registered capital"), html.Td("300")])
-row12 = html.Tr([html.Td("Paid Up Capital"), html.Td("3")])
+row10 = html.Tr([html.Td("Total Number Of Employees ('000)"), html.Td("31")])
+row11 = html.Tr([html.Td("Registered capital ($ M)"), html.Td("300")])
+row12 = html.Tr([html.Td("Paid Up Capital ($ M)"), html.Td("3")])
 
 
 table_body = [html.Tbody(
