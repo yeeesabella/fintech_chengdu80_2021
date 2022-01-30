@@ -106,9 +106,6 @@ def displayPage(pathname):
     if pathname == '/signup':
         return signup.layout
 
-    if pathname == '/data_provider':
-        return data_provider.layout
-
     if pathname == '/contribute_data':
         return contribute_data.layout
 

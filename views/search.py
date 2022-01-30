@@ -156,9 +156,14 @@ layout = dbc.Container(
         #                 ], align='left', style={'width': '800px'}),
         dbc.Button("View trends & forecasts", id="view_forecast", href='/payment',
                    outline=True, color='primary', className="mr-2",
-                   style={'textAlign': 'center', 'width': '790px', 'margin-top': '10px', 'font-size': '16px'}),
+                   style={'textAlign': 'center', 'width': '790px', 'margin-top': '10px', 'font-size': '16px','margin-botton':'100px'}),
         html.P(),
-        html.P()
+        html.P(),
+        html.P(),
+        html.P(),
+        html.P(),
+        html.Br(),
+        html.Br()
     ], style={'margin-left': '20%'}
 )
 
